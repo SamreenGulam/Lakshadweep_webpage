@@ -37,7 +37,7 @@
 
 .hero-content h1,
 .hero-content p {
-  text-shadow: 0 3px 8px rgba(0,0,0,0.35);
+  text-shadow: 0 3px 8px rgba(0, 0, 0, 0.35);
 }
 
 /* ================= PLAN TRIP BUTTON ================= */
@@ -87,14 +87,34 @@
 }
 
 .main-navbar.scrolled {
-  background: rgba(0, 0, 0, 0.45); /* subtle dark blur like Bahamas */
+  background: rgba(0, 0, 0, 0.45);
+  /* subtle dark blur like Bahamas */
   backdrop-filter: blur(10px);
   padding: 10px 0;
 }
 
 .navbar-brand,
 .nav-link {
-  color: white !important;  /* Keep text white always */
+  color: white !important;
+  /* Keep text white always */
+}
+
+/* Styling for logo */
+.brand-title {
+  font-size: 20px;
+  font-weight: 800;
+  color: rgb(9, 129, 228);
+  line-height: 1;
+  padding-left: 20px;
+}
+
+.brandsubhead {
+  font-size: 8.4px;
+  font-weight: 700;
+  color: #483535;
+  margin-top: 2px;
+  letter-spacing: 0.3px;
+  padding-left: 20px;
 }
 
 .nav-link {
@@ -141,12 +161,13 @@
   display: none;
   position: absolute;
   left: -30px;
-  top: 60px; /* fixes alignment */
+  top: 60px;
+  /* fixes alignment */
   background: #ffffff;
   width: 260px;
   border-radius: 14px;
   padding: 10px 0;
-  box-shadow: 0 6px 25px rgba(0,0,0,0.15);
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.15);
   z-index: 2000;
 }
 
@@ -157,7 +178,7 @@
 }
 
 .dropdown-panel ul li {
-  border-bottom: 1px solid rgba(0,0,0,0.08);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
 }
 
 .dropdown-panel ul li:last-child {
@@ -197,7 +218,7 @@
   background: #ffffff;
   padding: 10px 20px;
   border-radius: 50px;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.18);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.18);
   transition: all 0.4s ease;
   position: absolute;
   right: 10px;
@@ -231,7 +252,8 @@
 /* ----- Islands section layout ----- */
 .island-cards {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); /* 4 on big screens, fewer on small */
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  /* 4 on big screens, fewer on small */
   gap: 28px;
   width: 100%;
   max-width: 1200px;
@@ -279,7 +301,8 @@
 
 .island-card {
   position: relative;
-  aspect-ratio: 3 / 4;          /* 👍 keeps shape consistent, no fixed height */
+  aspect-ratio: 3 / 4;
+  /* 👍 keeps shape consistent, no fixed height */
   border-radius: 25px;
   overflow: hidden;
   background-size: cover;
@@ -296,7 +319,7 @@
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(to top, rgba(0,0,0,0.7), rgba(0,0,0,0.15));
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.15));
   opacity: 0.7;
   transition: opacity 0.3s ease;
 }
@@ -364,22 +387,33 @@
 }
 
 .island-card.kavaratti {
-  background-image: url("../utilities/pictures/kavaratti.jpg"); /* or kavaratti.jpg */
+  background-image: url("../utilities/pictures/kavaratti.jpg");
+  /* or kavaratti.jpg */
 }
+
 .island-card.amini {
-  background-image: url("../utilities/pictures/amini.jpg"); /* or kavaratti.jpg */
+  background-image: url("../utilities/pictures/amini.jpg");
+  /* or kavaratti.jpg */
 }
+
 .island-card.kadmat {
-  background-image: url("../utilities/pictures/kadmat.png"); /* or kavaratti.jpg */
+  background-image: url("../utilities/pictures/kadmat.png");
+  /* or kavaratti.jpg */
 }
+
 .island-card.kalpeni {
-  background-image: url("../utilities/pictures/kalpeni.jpg"); /* or kavaratti.jpg */
+  background-image: url("../utilities/pictures/kalpeni.jpg");
+  /* or kavaratti.jpg */
 }
+
 .island-card.andrott {
-  background-image: url("../utilities/pictures/andrott.jpg"); /* or kavaratti.jpg */
+  background-image: url("../utilities/pictures/andrott.jpg");
+  /* or kavaratti.jpg */
 }
+
 .island-card.kiltan {
-  background-image: url("../utilities/pictures/kiltan.webp"); /* or kavaratti.jpg */
+  background-image: url("../utilities/pictures/kiltan.webp");
+  /* or kavaratti.jpg */
 }
 
 /* ================= RESPONSIVE FIXES ================= */
@@ -411,6 +445,7 @@
     width: 100%;
   }
 }
+
 /* ================= MOBILE MENU ================= */
 /* Mobile Menu Fullscreen */
 /* Fullscreen mobile slide-in panel */
@@ -425,7 +460,7 @@
   transition: right 0.4s ease;
   z-index: 5000;
   overflow-y: auto;
-  box-shadow: -4px 0 20px rgba(0,0,0,0.25);
+  box-shadow: -4px 0 20px rgba(0, 0, 0, 0.25);
 }
 
 .mobile-menu.show {
@@ -435,9 +470,11 @@
 /* Dark background overlay */
 .menu-overlay {
   position: fixed;
-  top: 0; left: 0;
-  width: 100%; height: 100vh;
-  background: rgba(0,0,0,0.55);
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.55);
   backdrop-filter: blur(4px);
   z-index: 4500;
   display: none;
@@ -488,7 +525,7 @@
   height: 100vh;
   background: #ffffff;
   padding: 70px 30px;
-  box-shadow: -5px 0 25px rgba(0,0,0,0.25);
+  box-shadow: -5px 0 25px rgba(0, 0, 0, 0.25);
   transition: right 0.45s ease-in-out;
   z-index: 2001;
   overflow-y: auto;
@@ -515,7 +552,7 @@
   display: none;
   position: fixed;
   inset: 0;
-  background: rgba(0,0,0,0.65);
+  background: rgba(0, 0, 0, 0.65);
   backdrop-filter: blur(6px);
   z-index: 2000;
   opacity: 0;
@@ -563,7 +600,7 @@
 }
 
 .mobile-dropdown-toggle:hover {
-  background: rgba(0,123,255,0.1);
+  background: rgba(0, 123, 255, 0.1);
 }
 
 .mobile-submenu {
@@ -591,29 +628,37 @@
 .mobile-submenu li {
   margin: 10px 0;
   font-size: 10px;
-  
+
 }
+
 .mobile-submenu a {
   color: #333;
 
 
 }
+
 /* Mobile responsive card layout */
-@media (max-width: 992px) {     /* tablets & small laptops */
+@media (max-width: 992px) {
+
+  /* tablets & small laptops */
   .island-card {
     width: 48%;
     height: 260px;
   }
 }
 
-@media (max-width: 600px) {     /* phones */
+@media (max-width: 600px) {
+
+  /* phones */
   .island-cards {
     justify-content: center;
   }
 
   .island-card {
-    width: 100%;     /* full width per card */
-    height: 230px;   /* reduce height */
+    width: 100%;
+    /* full width per card */
+    height: 230px;
+    /* reduce height */
   }
 
   .island-overlay h3 {
@@ -628,9 +673,17 @@
 
 /* Animation */
 @keyframes fadeDown {
-  from { opacity: 0; transform: translateY(-8px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
+
 /* Mega Dropdown Base */
 
 /* WRAPPER */
@@ -645,13 +698,27 @@
   border-radius: 0 0 18px 18px;
   display: none;
   transition: 0.3s ease-in-out;
-  box-shadow: 0 5px 30px rgba(0,0,0,0.1);
+  box-shadow: 0 5px 30px rgba(0, 0, 0, 0.1);
+}
+.mega-menu.active {
+  display: block !important;
 }
 
-/* SHOW MENU ON HOVER */
+
+/* SHOW MENU ON HOVER "ISLANDS" */
+/* default hidden */
+.mega-menu {
+  display: none;
+}
+
 .dropdown-mega:hover .mega-menu {
   display: block;
 }
+
+.mega-menu.hide {
+  display: none !important;
+}
+
 
 /* MEGA MENU INNER CONTENT */
 .mega-content {
@@ -667,6 +734,7 @@
   font-weight: 700;
   margin-bottom: 10px;
 }
+
 .mega-left p {
   font-size: 17px;
   color: #444;
@@ -679,8 +747,9 @@
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   gap: 50px 150px;
-  
+
 }
+
 .mega-links ul {
   list-style: none;
   padding: 0;
