@@ -72,6 +72,7 @@
                 </ul>
                 <ul>
                   <li><a href="#">Kiltan Island</a></li>
+                  <li><a href="#">Chetlat Island</a></li>
                   <li><a href="#">Bitra Island</a></li>
                 </ul>
               </div>
@@ -80,9 +81,38 @@
           </div>
         </li>
 
-        <li class="nav-item">
-          <a class="nav-link" href="#">Travel Info</a>
-        </li>
+        <!-- Travel Info Mega Dropdown -->
+<li class="nav-item dropdown-mega">
+  <a class="nav-link" href="#travel-info" id="travelDropdown">Travel Info</a>
+
+  <div class="mega-menu">
+    <div class="mega-content container">
+
+      <!-- LEFT SECTION -->
+      <div class="mega-left">
+        <h4>Travel Info</h4>
+        <p>
+          Everything you need to know for planning your Lakshadweep journey.
+        </p>
+      </div>
+
+      <!-- RIGHT SECTION – LINK GRID -->
+      <div class="mega-links">
+        <ul>
+          <li><a href="#">Ways to get here</a></li>
+        </ul>
+        <ul>
+          <li><a href="#">Stay</a></li>
+        </ul>
+        <ul>
+          <li><a href="#">Map</a></li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</li>
+
         <li class="nav-item">
           <a class="nav-link" href="#">Experiences</a>
         </li>
@@ -120,6 +150,11 @@
           <li><a href="#">Kavaratti Island</a></li>
           <li><a href="#">Kalpeni Island</a></li>
           <li><a href="#">Amini Island</a></li>
+          <li><a href="#">Kadmat Island</a></li>
+          <li><a href="#">Kiltan Island</a></li>
+          <li><a href="#">Bitra Island</a></li>
+          <li><a href="#">Kiltan Island</a></li>
+          <li><a href="#">Bitra Island</a></li>
         </ul>
       </li>
 
@@ -200,11 +235,11 @@
           <span class="island-tags">Kayaking · Shallow reefs</span>
         </div>
       </div>
-      <div class="island-card minicoy">
+      <div class="island-card chetlat">
         <div class="island-overlay">
-          <h3>Minicoy</h3>
-          <p>Southernmost island with lighthouse views and unique cultural flavour.</p>
-          <span class="island-tags">Lighthouse · Tuna fishing · Culture</span>
+          <h3>Chetlat</h3>
+          <p>Small island with coconut groves and a close-knit community.</p>
+          <span class="island-tags">Quiet · Coconut landscape</span>
         </div>
       </div>
       <div class="island-card andrott">
@@ -221,13 +256,13 @@
           <span class="island-tags">Heritage · Calm ambience</span>
         </div>
       </div>
-      <!-- <div class="island-card minicoy">
+      <div class="island-card bitra">
         <div class="island-overlay">
-          <h3>Minicoy</h3>
-          <p>Southernmost island with lighthouse views and unique cultural flavour.</p>
-          <span class="island-tags">Lighthouse · Tuna fishing · Culture</span>
+          <h3>Bitra</h3>
+          <p>Tiny inhabited island offering wide ocean horizons and solitude.</p>
+          <span class="island-tags">Remote · Minimal footprint</span>
         </div>
-      </div> -->
+      </div>
 
     </div>
   </section>
@@ -235,6 +270,113 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
   <script src="JS/ux4g.bundle.min.js"></script>
   <script src="JS/script.js"></script>
+<!-- TRAVEL INFO -->
+<section id="travel-info" class="travel-info-section">
+  <div class="container">
+    <h2 class="section-title">Travel Info</h2>
+    <p class="section-subtitle">
+      Plan how you arrive and where you stay in Lakshadweep
+    </p>
+
+    <!-- ===== SLIDER 1: WAYS TO GET HERE ===== -->
+    <div class="travel-slider-group">
+      <h3 class="travel-group-title">Ways to Get Here</h3>
+
+      <div class="travel-slider travel-slider-ways">
+
+        <button class="travel-arrow travel-prev-ways">&lt;</button>
+
+        <!-- Slide 1 – Flights -->
+        <div class="travel-slide travel-slide-ways active">
+          <div class="travel-card-inner">
+            <h4 class="travel-slide-heading">Flights</h4>
+            <p class="travel-slide-text">
+              Limited flights operate to Agatti from Kochi. From Agatti, onward
+              travel to other islands is by speedboat or ferry, as per permits
+              and packages.
+            </p>
+            <button class="travel-cta">Learn more</button>
+          </div>
+        </div>
+
+        <!-- Slide 2 – Passenger ships -->
+        <div class="travel-slide travel-slide-ways">
+          <div class="travel-card-inner">
+            <h4 class="travel-slide-heading">Passenger ships</h4>
+            <p class="travel-slide-text">
+              Government‑approved passenger ships sail from Kochi on scheduled
+              departures, offering basic cabins and decks to several islands.
+            </p>
+            <button class="travel-cta">View schedules</button>
+          </div>
+        </div>
+
+        <!-- Slide 3 – Inter‑island vessels & boats -->
+        <div class="travel-slide travel-slide-ways">
+          <div class="travel-card-inner">
+            <h4 class="travel-slide-heading">Inter‑island vessels &amp; boats</h4>
+            <p class="travel-slide-text">
+              High‑speed crafts, ferries and local boats link Agatti, Kavaratti,
+              Minicoy and other islands, depending on weather and approvals.
+            </p>
+            <button class="travel-cta">Island connections</button>
+          </div>
+        </div>
+
+        <button class="travel-arrow travel-next-ways">&gt;</button>
+      </div>
+    </div>
+
+    <!-- ===== SLIDER 2: STAY OPTIONS ===== -->
+    <div class="travel-slider-group">
+      <h3 class="travel-group-title">Stay</h3>
+
+      <div class="travel-slider travel-slider-stay">
+
+        <button class="travel-arrow travel-prev-stay">&lt;</button>
+
+        <!-- Slide 1 – Island resorts -->
+        <div class="travel-slide travel-slide-stay active">
+          <div class="travel-card-inner">
+            <h4 class="travel-slide-heading">Island resorts</h4>
+            <p class="travel-slide-text">
+              Beachfront resorts on islands like Bangaram, Kadmat and Kavaratti
+              with all‑inclusive holiday packages and lagoon views.
+            </p>
+            <button class="travel-cta">Explore resorts</button>
+          </div>
+        </div>
+
+        <!-- Slide 2 – Hotels & lodges -->
+        <div class="travel-slide travel-slide-stay">
+          <div class="travel-card-inner">
+            <h4 class="travel-slide-heading">Hotels &amp; lodges</h4>
+            <p class="travel-slide-text">
+              Simple, comfortable hotels and lodges on inhabited islands – ideal
+              for budget travellers and longer stays.
+            </p>
+            <button class="travel-cta">View options</button>
+          </div>
+        </div>
+
+        <!-- Slide 3 – Guesthouses & homestays -->
+        <div class="travel-slide travel-slide-stay">
+          <div class="travel-card-inner">
+            <h4 class="travel-slide-heading">Guesthouses &amp; homestays</h4>
+            <p class="travel-slide-text">
+              Family‑run stays that offer local food, culture and everyday life
+              in Lakshadweep (only on select islands, with permits).
+            </p>
+            <button class="travel-cta">Stay with locals</button>
+          </div>
+        </div>
+
+        <button class="travel-arrow travel-next-stay">&gt;</button>
+      </div>
+    </div>
+
+  </div>
+</section>
 
 </body>
 

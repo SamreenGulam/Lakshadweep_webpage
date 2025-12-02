@@ -124,6 +124,57 @@ document.addEventListener("DOMContentLoaded", function () {
       });
     });
   });
+    // ===== TRAVEL SLIDER 1: WAYS TO GET HERE =====
+  const waysSlides = document.querySelectorAll(".travel-slide-ways");
+  const waysPrev = document.querySelector(".travel-prev-ways");
+  const waysNext = document.querySelector(".travel-next-ways");
+
+  if (waysSlides.length && waysPrev && waysNext) {
+    let waysIndex = 0;
+
+    function showWaysSlide(index) {
+      waysSlides.forEach((slide, i) => {
+        slide.classList.toggle("active", i === index);
+      });
+    }
+
+    waysNext.addEventListener("click", () => {
+      waysIndex = (waysIndex + 1) % waysSlides.length;
+      showWaysSlide(waysIndex);
+    });
+
+    waysPrev.addEventListener("click", () => {
+      waysIndex = (waysIndex - 1 + waysSlides.length) % waysSlides.length;
+      showWaysSlide(waysIndex);
+    });
+  }
+
+  // ===== TRAVEL SLIDER 2: STAY OPTIONS =====
+  const staySlides = document.querySelectorAll(".travel-slide-stay");
+  const stayPrev = document.querySelector(".travel-prev-stay");
+  const stayNext = document.querySelector(".travel-next-stay");
+
+  if (staySlides.length && stayPrev && stayNext) {
+    let stayIndex = 0;
+
+    function showStaySlide(index) {
+      staySlides.forEach((slide, i) => {
+        slide.classList.toggle("active", i === index);
+      });
+    }
+
+    stayNext.addEventListener("click", () => {
+      stayIndex = (stayIndex + 1) % staySlides.length;
+      showStaySlide(stayIndex);
+    });
+
+    stayPrev.addEventListener("click", () => {
+      stayIndex = (stayIndex - 1 + staySlides.length) % staySlides.length;
+      showStaySlide(stayIndex);
+    });
+  }
+
+
 
 });
 megaMenu.addEventListener("mouseleave", () => {
