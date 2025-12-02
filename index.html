@@ -26,75 +26,77 @@
   <!-- NAVBAR -->
   <!-- NAVBAR -->
   <nav class="navbar navbar-expand-lg fixed-top main-navbar">
-    <div class="container">
-      <a class="navbar-brand fw-semibold" href="#">Lakshadweep</a>
+    <a class="navbar-brand fw-semibold d-flex flex-column" href="#">
+      <span class="brand-title">Lakshadweep</span>
+      <span class="brandsubhead">Official‑style travel inspiration</span>
+    </a>
+    <!-- Mobile Hamburger -->
+    <button class="navbar-toggler" type="button" id="mobileMenuToggle">
+      <i class="bi bi-list" style="font-size:32px;color:white;"></i>
+    </button>
 
-      <!-- Mobile Hamburger -->
-      <button class="navbar-toggler" type="button" id="mobileMenuToggle">
-        <i class="bi bi-list" style="font-size:32px;color:white;"></i>
-      </button>
+    <!-- Desktop Menu -->
+    <div class="collapse navbar-collapse" id="mainNav">
+      <ul class="navbar-nav ms-auto">
 
-      <!-- Desktop Menu -->
-      <div class="collapse navbar-collapse" id="mainNav">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item">
-            <a class="nav-link" href="#">Home</a>
-          </li>
 
-          <!-- Islands Mega Dropdown -->
-          <li class="nav-item dropdown-mega">
-            <a class="nav-link" href="#islands-section" id="megaDropdown">Islands</a>
+        <!-- Islands Mega Dropdown -->
+        <li class="nav-item dropdown-mega">
+          <a class="nav-link" href="#islands" id="megaDropdown">Islands</a>
 
-            <div class="mega-menu">
-              <div class="mega-content container">
+          <div class="mega-menu">
+            <div class="mega-content container">
 
-                <!-- LEFT SECTION -->
-                <div class="mega-left">
-                  <h4>Islands</h4>
-                  <p>
-                    Explore 11 breathtaking islands of Lakshadweep — each with unique culture,
-                    lagoons, beaches, and adventure experiences.
-                  </p>
-                </div>
-
-                <!-- RIGHT SECTION – LINK GRID (4 / 4 / 2) -->
-                <div class="mega-links">
-                  <ul>
-                    <li><a href="#">Agatti Island</a></li>
-                    <li><a href="#">Bangaram Island</a></li>
-                    <li><a href="#">Minicoy Island</a></li>
-                    <li><a href="#">Kavaratti Island</a></li>
-                  </ul>
-                  <ul>
-                    <li><a href="#">Kalpeni Island</a></li>
-                    <li><a href="#">Amini Island</a></li>
-                    <li><a href="#">Kadmat Island</a></li>
-                    <li><a href="#">Andrott Island</a></li>
-                  </ul>
-                  <ul>
-                    <li><a href="#">Kiltan Island</a></li>
-                    <li><a href="#">Bitra Island</a></li>
-                  </ul>
-                </div>
-
+              <!-- LEFT SECTION -->
+              <div class="mega-left">
+                <h4>Islands</h4>
+                <p>
+                  Explore 11 breathtaking islands of Lakshadweep — each with unique culture,
+                  lagoons, beaches, and adventure experiences.
+                </p>
               </div>
-            </div>
-          </li>
 
-          <li class="nav-item">
-            <a class="nav-link" href="#">Travel Info</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Experiences</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Entry Permit</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">News</a>
-          </li>
-        </ul>
-      </div>
+              <!-- RIGHT SECTION – LINK GRID (4 / 4 / 2) -->
+              <div class="mega-links">
+                <ul>
+                  <li><a href="#">Agatti Island</a></li>
+                  <li><a href="#">Bangaram Island</a></li>
+                  <li><a href="#">Minicoy Island</a></li>
+                  <li><a href="#">Kavaratti Island</a></li>
+                </ul>
+                <ul>
+                  <li><a href="#">Kalpeni Island</a></li>
+                  <li><a href="#">Amini Island</a></li>
+                  <li><a href="#">Kadmat Island</a></li>
+                  <li><a href="#">Andrott Island</a></li>
+                </ul>
+                <ul>
+                  <li><a href="#">Kiltan Island</a></li>
+                  <li><a href="#">Bitra Island</a></li>
+                </ul>
+              </div>
+
+            </div>
+          </div>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="#">Travel Info</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Experiences</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Entry Permit</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">News</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Explore</a>
+        </li>
+      </ul>
+    </div>
     </div>
   </nav>
 
@@ -109,8 +111,6 @@
     <button class="close-menu" id="closeMenuBtn"><i class="bi bi-x-lg"></i></button>
 
     <ul class="mobile-nav-list">
-      <li><a href="#">Home</a></li>
-
       <li class="mobile-item">
         <button class="mobile-dropdown-toggle">Islands <span class="arrow">⌄</span></button>
         <ul class="mobile-submenu">
@@ -127,6 +127,7 @@
       <li><a href="#">Experience</a></li>
       <li><a href="#">Entry Permit</a></li>
       <li><a href="#">News</a></li>
+      <li><a href="#">Explore</a></li>
     </ul>
   </div>
 
