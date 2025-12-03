@@ -416,6 +416,16 @@
   /* or kavaratti.jpg */
 }
 
+.island-card.bitra {
+  background-image: url("../utilities/pictures/bitra.webp");
+  /* or kavaratti.jpg */
+}
+
+.island-card.chetlat {
+  background-image: url("../utilities/pictures/chetlat.jpg");
+  /* or kavaratti.jpg */
+}
+
 /* ================= RESPONSIVE FIXES ================= */
 @media (max-width: 1200px) {
   .navbar-search {
@@ -768,3 +778,82 @@
 .mega-links ul li a:hover {
   color: #0077b6;
 }
+.travel-info-section {
+  padding: 80px 0;
+}
+
+.travel-slider-group {
+  margin-top: 40px;
+}
+
+.travel-group-title {
+  font-size: 22px;
+  font-weight: 700;
+  text-align: left;
+  margin-bottom: 16px;
+  color: #02435b;
+}
+
+/* wrapper for each slider row */
+.travel-slider {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* arrows */
+.travel-arrow {
+  border: none;
+  background: transparent;
+  font-size: 24px;
+  cursor: pointer;
+  padding: 8px 12px;
+  color: #004b6b;
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.travel-arrow:hover {
+  transform: scale(1.15);
+  color: #0077b6;
+}
+
+/* the pill card itself */
+.travel-slide {
+  max-width: 60vw;          /* ~60% of page */
+  width: 100%;
+  margin: 0 24px;
+  border-radius: 40px;
+  background: radial-gradient(circle at 0 0, #f3fbff 0, #dff3ff 60%, #d7f0ff 100%);
+  box-shadow: 0 22px 45px rgba(0, 0, 0, 0.18);
+  opacity: 0;
+  pointer-events: none;
+  transform: translateX(40px);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.travel-slide.active {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateX(0);
+}
+
+.travel-card-inner {
+  padding: 34px 40px 32px;
+}
+
+.travel-slide-heading {
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: #005475;
+}
+
+.travel-slide-text {
+  font-size: 15px;
+  line-height: 1.7;
+  color: #516772;
+  margin-bottom: 20px;
+}
+
+/* reuse your .travel-cta styles from before */
