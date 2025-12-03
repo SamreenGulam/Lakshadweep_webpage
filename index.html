@@ -22,14 +22,15 @@
 </head>
 
 <body>
-
-  <!-- NAVBAR -->
   <!-- NAVBAR -->
   <nav class="navbar navbar-expand-lg fixed-top main-navbar">
+
+    <!-- Brand -->
     <a class="navbar-brand fw-semibold d-flex flex-column" href="#">
       <span class="brand-title">Lakshadweep</span>
       <span class="brandsubhead">Official‑style travel inspiration</span>
     </a>
+
     <!-- Mobile Hamburger -->
     <button class="navbar-toggler" type="button" id="mobileMenuToggle">
       <i class="bi bi-list" style="font-size:32px;color:white;"></i>
@@ -39,7 +40,6 @@
     <div class="collapse navbar-collapse" id="mainNav">
       <ul class="navbar-nav ms-auto">
 
-
         <!-- Islands Mega Dropdown -->
         <li class="nav-item dropdown-mega">
           <a class="nav-link" href="#islands" id="megaDropdown">Islands</a>
@@ -47,16 +47,14 @@
           <div class="mega-menu">
             <div class="mega-content container">
 
-              <!-- LEFT SECTION -->
               <div class="mega-left">
                 <h4>Islands</h4>
                 <p>
-                  Explore 11 breathtaking islands of Lakshadweep — each with unique culture,
-                  lagoons, beaches, and adventure experiences.
+                  Explore 11 breathtaking islands of Lakshadweep — each with unique
+                  culture, lagoons, beaches, and adventure experiences.
                 </p>
               </div>
 
-              <!-- RIGHT SECTION – LINK GRID (4 / 4 / 2) -->
               <div class="mega-links">
                 <ul>
                   <li><a href="#">Agatti Island</a></li>
@@ -82,53 +80,63 @@
         </li>
 
         <!-- Travel Info Mega Dropdown -->
-<li class="nav-item dropdown-mega">
-  <a class="nav-link" href="#travel-info" id="travelDropdown">Travel Info</a>
+        <li class="nav-item dropdown-mega">
+          <a class="nav-link" href="#travel-info" id="travelDropdown">Travel Info</a>
 
-  <div class="mega-menu">
-    <div class="mega-content container">
+          <div class="mega-menu">
+            <div class="mega-content container">
 
-      <!-- LEFT SECTION -->
-      <div class="mega-left">
-        <h4>Travel Info</h4>
-        <p>
-          Everything you need to know for planning your Lakshadweep journey.
-        </p>
-      </div>
+              <div class="mega-left">
+                <h4>Travel Info</h4>
+                <p>Everything you need to know for planning your Lakshadweep journey.</p>
+              </div>
 
-      <!-- RIGHT SECTION – LINK GRID -->
-      <div class="mega-links">
-        <ul>
-          <li><a href="#">Ways to get here</a></li>
-        </ul>
-        <ul>
-          <li><a href="#">Stay</a></li>
-        </ul>
-        <ul>
-          <li><a href="#">Map</a></li>
-        </ul>
-      </div>
+              <div class="mega-links">
+                <ul>
+                  <li><a href="#">Ways to get here</a></li>
+                </ul>
+                <ul>
+                  <li><a href="#">Stay</a></li>
+                </ul>
+                <ul>
+                  <li><a href="#">Map</a></li>
+                </ul>
+              </div>
 
-    </div>
-  </div>
-</li>
+            </div>
+          </div>
+        </li>
 
         <li class="nav-item">
           <a class="nav-link" href="#">Experiences</a>
         </li>
+
         <li class="nav-item">
           <a class="nav-link" href="#">Entry Permit</a>
         </li>
+
         <li class="nav-item">
           <a class="nav-link" href="#">News</a>
         </li>
+
+        <!-- EXPLORE SEARCH TRIGGER -->
         <li class="nav-item">
-          <a class="nav-link" href="#">Explore</a>
+          <a href="#" class="nav-link explore-trigger">Explore</a>
         </li>
+
       </ul>
     </div>
+
+    <!-- SEARCH BAR (hidden until Explore clicked) -->
+    <div id="navbarSearch" class="navbar-search">
+      <input type="text" placeholder="SEARCH" class="search-field" />
+      <button class="search-icon"><i class="bi bi-search"></i></button>
     </div>
+
   </nav>
+
+  <!-- SEARCH OVERLAY BACKDROP -->
+  <div id="searchOverlay" class="search-overlay"></div>
 
   <div id="menuOverlay" class="menu-overlay"></div>
 
@@ -158,15 +166,13 @@
         </ul>
       </li>
 
-      <li><a href="#">Travel Info</a></li>
+      <li><a href="#travel-info" class="mobile-link">Travel Info</a></li>
       <li><a href="#">Experience</a></li>
       <li><a href="#">Entry Permit</a></li>
       <li><a href="#">News</a></li>
       <li><a href="#">Explore</a></li>
     </ul>
   </div>
-
-
   <!-- HERO SECTION -->
   <header class="hero">
     <div class="hero-content">
@@ -266,117 +272,137 @@
 
     </div>
   </section>
+
+
+  <!-- TRAVEL INFO  -->
+  <section id="travel-info" class="travel-info-section">
+    <div class="container">
+
+      <h2 class="section-title">Travel Info</h2>
+      <p class="section-subtitle">
+        Plan how you arrive and where you stay in Lakshadweep
+      </p>
+
+      <!-- ========================= -->
+      <!--   WAYS TO GET HERE SLIDER -->
+      <!-- ========================= -->
+      <div class="big-slider" id="waysSlider">
+
+        <button class="big-arrow big-prev">&lt;</button>
+
+        <div class="big-slides">
+
+          <!-- SLIDE 0 – FLIGHTS -->
+          <article class="big-slide active" data-slide="0">
+            <div class="big-art"></div>
+            <div class="big-image">
+              <div class="big-overlay">
+                <h3>Flights</h3>
+                <p>
+                  Limited flights operate to Agatti from Kochi. From Agatti, onward travel
+                  to other islands is by speedboat or ferry, as per permits and packages.
+                </p>
+                <a class="btn-ghost" href="#">Learn more</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- SLIDE 1 – PASSENGER SHIPS -->
+          <article class="big-slide" data-slide="1">
+            <div class="big-art"></div>
+            <div class="big-image">
+              <div class="big-overlay">
+                <h3>Passenger Ships</h3>
+                <p>
+                  Government‑approved ships sail from Kochi with cabin and deck travel options.
+                </p>
+                <a class="btn-ghost" href="#">Schedules</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- SLIDE 2 – INTER ISLAND -->
+          <article class="big-slide" data-slide="2">
+            <div class="big-art"></div>
+            <div class="big-image">
+              <div class="big-overlay">
+                <h3>Inter-Island Vessels & Boats</h3>
+                <p>
+                  High‑speed crafts, ferries and local boats link major islands depending on weather.
+                </p>
+                <a class="btn-ghost" href="#">Connections</a>
+              </div>
+            </div>
+          </article>
+
+        </div>
+
+        <button class="big-arrow big-next">&gt;</button>
+      </div>
+
+      <!-- ========================= -->
+      <!--       STAY SLIDER         -->
+      <!-- ========================= -->
+      <div class="big-slider" id="staySlider">
+
+        <button class="big-arrow big-prev">&lt;</button>
+
+        <div class="big-slides">
+
+          <!-- SLIDE 0 – RESORTS -->
+          <article class="big-slide active" data-slide="0">
+            <div class="big-art"></div>
+            <div class="big-image">
+              <div class="big-overlay">
+                <h3>Island Resorts</h3>
+                <p>
+                  Beachfront resorts on Bangaram, Kadmat & Kavaratti with curated packages.
+                </p>
+                <a class="btn-ghost" href="#">Explore resorts</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- SLIDE 1 – HOTELS -->
+          <article class="big-slide" data-slide="1">
+            <div class="big-art"></div>
+            <div class="big-image">
+              <div class="big-overlay">
+                <h3>Hotels & Lodges</h3>
+                <p>Comfortable hotels on inhabited islands, perfect for budget travellers.</p>
+                <a class="btn-ghost" href="#">View options</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- SLIDE 2 – HOMESTAYS -->
+          <article class="big-slide" data-slide="2">
+            <div class="big-art"></div>
+            <div class="big-image">
+              <div class="big-overlay">
+                <h3>Guesthouses & Homestays</h3>
+                <p>Stay with local families and experience authentic island life.</p>
+                <a class="btn-ghost" href="#">Stay with locals</a>
+              </div>
+            </div>
+          </article>
+
+        </div>
+
+        <button class="big-arrow big-next">&gt;</button>
+      </div>
+
+    </div>
+  </section>
+
+
+
+
   <!-- SCRIPTS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
   <script src="JS/ux4g.bundle.min.js"></script>
   <script src="JS/script.js"></script>
-<!-- TRAVEL INFO -->
-<section id="travel-info" class="travel-info-section">
-  <div class="container">
-    <h2 class="section-title">Travel Info</h2>
-    <p class="section-subtitle">
-      Plan how you arrive and where you stay in Lakshadweep
-    </p>
 
-    <!-- ===== SLIDER 1: WAYS TO GET HERE ===== -->
-    <div class="travel-slider-group">
-      <h3 class="travel-group-title">Ways to Get Here</h3>
-
-      <div class="travel-slider travel-slider-ways">
-
-        <button class="travel-arrow travel-prev-ways">&lt;</button>
-
-        <!-- Slide 1 – Flights -->
-        <div class="travel-slide travel-slide-ways active">
-          <div class="travel-card-inner">
-            <h4 class="travel-slide-heading">Flights</h4>
-            <p class="travel-slide-text">
-              Limited flights operate to Agatti from Kochi. From Agatti, onward
-              travel to other islands is by speedboat or ferry, as per permits
-              and packages.
-            </p>
-            <button class="travel-cta">Learn more</button>
-          </div>
-        </div>
-
-        <!-- Slide 2 – Passenger ships -->
-        <div class="travel-slide travel-slide-ways">
-          <div class="travel-card-inner">
-            <h4 class="travel-slide-heading">Passenger ships</h4>
-            <p class="travel-slide-text">
-              Government‑approved passenger ships sail from Kochi on scheduled
-              departures, offering basic cabins and decks to several islands.
-            </p>
-            <button class="travel-cta">View schedules</button>
-          </div>
-        </div>
-
-        <!-- Slide 3 – Inter‑island vessels & boats -->
-        <div class="travel-slide travel-slide-ways">
-          <div class="travel-card-inner">
-            <h4 class="travel-slide-heading">Inter‑island vessels &amp; boats</h4>
-            <p class="travel-slide-text">
-              High‑speed crafts, ferries and local boats link Agatti, Kavaratti,
-              Minicoy and other islands, depending on weather and approvals.
-            </p>
-            <button class="travel-cta">Island connections</button>
-          </div>
-        </div>
-
-        <button class="travel-arrow travel-next-ways">&gt;</button>
-      </div>
-    </div>
-
-    <!-- ===== SLIDER 2: STAY OPTIONS ===== -->
-    <div class="travel-slider-group">
-      <h3 class="travel-group-title">Stay</h3>
-
-      <div class="travel-slider travel-slider-stay">
-
-        <button class="travel-arrow travel-prev-stay">&lt;</button>
-
-        <!-- Slide 1 – Island resorts -->
-        <div class="travel-slide travel-slide-stay active">
-          <div class="travel-card-inner">
-            <h4 class="travel-slide-heading">Island resorts</h4>
-            <p class="travel-slide-text">
-              Beachfront resorts on islands like Bangaram, Kadmat and Kavaratti
-              with all‑inclusive holiday packages and lagoon views.
-            </p>
-            <button class="travel-cta">Explore resorts</button>
-          </div>
-        </div>
-
-        <!-- Slide 2 – Hotels & lodges -->
-        <div class="travel-slide travel-slide-stay">
-          <div class="travel-card-inner">
-            <h4 class="travel-slide-heading">Hotels &amp; lodges</h4>
-            <p class="travel-slide-text">
-              Simple, comfortable hotels and lodges on inhabited islands – ideal
-              for budget travellers and longer stays.
-            </p>
-            <button class="travel-cta">View options</button>
-          </div>
-        </div>
-
-        <!-- Slide 3 – Guesthouses & homestays -->
-        <div class="travel-slide travel-slide-stay">
-          <div class="travel-card-inner">
-            <h4 class="travel-slide-heading">Guesthouses &amp; homestays</h4>
-            <p class="travel-slide-text">
-              Family‑run stays that offer local food, culture and everyday life
-              in Lakshadweep (only on select islands, with permits).
-            </p>
-            <button class="travel-cta">Stay with locals</button>
-          </div>
-        </div>
-
-        <button class="travel-arrow travel-next-stay">&gt;</button>
-      </div>
-    </div>
-
-  </div>
-</section>
 
 </body>
 

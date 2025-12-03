@@ -88,7 +88,6 @@
 
 .main-navbar.scrolled {
   background: rgba(0, 0, 0, 0.45);
-  /* subtle dark blur like Bahamas */
   backdrop-filter: blur(10px);
   padding: 10px 0;
 }
@@ -152,6 +151,153 @@
   font-weight: 700;
 }
 
+/* Navbar for mobile  */
+/* =============================
+   MOBILE MENU OVERLAY + ANIMATION
+============================= */
+
+#menuOverlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(8px);
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.3s ease;
+  z-index: 900;
+}
+
+#menuOverlay.show {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* MOBILE MENU PANEL */
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 78%;
+  height: 100vh;
+  background: #ffffff;
+  padding: 30px 22px;
+  box-shadow: -5px 0 20px rgba(0, 0, 0, 0.15);
+  transition: 0.4s ease-out;
+  z-index: 1000;
+}
+
+.mobile-menu.show {
+  right: 0;
+}
+
+/* CLOSE BUTTON */
+.close-menu {
+  background: transparent;
+  border: none;
+  font-size: 28px;
+  margin-left: auto;
+  display: block;
+  color: #111;
+  transform: rotate(0deg);
+  transition: 0.3s ease;
+}
+
+.close-menu:hover {
+  transform: rotate(90deg);
+}
+
+/* MENU LIST */
+.mobile-nav-list {
+  margin-top: 40px;
+  list-style: none;
+  padding-left: 0;
+}
+
+.mobile-nav-list li {
+  margin: 20px 0;
+  opacity: 0;
+  transform: translateX(20px);
+  animation: slideInMenu 0.4s forwards ease;
+}
+
+.mobile-nav-list li:nth-child(1) {
+  animation-delay: .1s;
+}
+
+.mobile-nav-list li:nth-child(2) {
+  animation-delay: .15s;
+}
+
+.mobile-nav-list li:nth-child(3) {
+  animation-delay: .2s;
+}
+
+.mobile-nav-list li:nth-child(4) {
+  animation-delay: .25s;
+}
+
+.mobile-nav-list li:nth-child(5) {
+  animation-delay: .3s;
+}
+
+.mobile-nav-list li:nth-child(6) {
+  animation-delay: .35s;
+}
+
+@keyframes slideInMenu {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* MENU LINKS */
+.mobile-nav-list a,
+.mobile-dropdown-toggle {
+  font-size: 20px;
+  font-weight: 600;
+  color: #111;
+  text-decoration: none;
+  width: 100%;
+  display: block;
+}
+
+/* ISLANDS DROPDOWN */
+.mobile-dropdown-toggle {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.mobile-item.open .arrow {
+  transform: rotate(180deg);
+}
+
+.arrow {
+  transition: 0.3s ease;
+}
+
+.mobile-submenu {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: 0.35s ease;
+  padding-left: 12px;
+}
+
+.mobile-item.open .mobile-submenu {
+  max-height: 500px;
+  opacity: 1;
+}
+
+.mobile-submenu a {
+  font-size: 17px;
+  margin: 10px 0;
+  display: block;
+}
+
+
+
 /* ================= ISLANDS DROPDOWN ================= */
 .dropdown-large {
   position: relative;
@@ -210,43 +356,85 @@
   display: block;
 }
 
-/* ================= SEARCH BAR ================= */
-.navbar-search {
-  display: none;
-  align-items: center;
-  gap: 10px;
-  background: #ffffff;
-  padding: 10px 20px;
-  border-radius: 50px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.18);
-  transition: all 0.4s ease;
-  position: absolute;
-  right: 10px;
-  top: 15px;
-  max-width: 650px;
-  width: 40%;
+/* ================== SEARCH OVERLAY ================== */
+.search-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(4px);
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.35s ease;
+  z-index: 900;
 }
 
-.navbar-search.active {
+/* SEARCH OVERLAY — NO BLUR */
+.search-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.0);
+  /* fully transparent */
+  display: none;
+  z-index: 900;
+}
+
+.search-overlay.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* ================== SEARCH BAR ================== */
+/* ================= SEARCH BAR ================= */
+.navbar-search {
+  position: fixed;
+  top: 18px;
+  right: -60%;          /* hidden off-screen */
+  width: 35%;           /* smaller width */
+  max-width: 500px;
+  padding: 12px 22px;
+  background: white;
+  border-radius: 40px;
   display: flex;
+  align-items: center;
+  gap: 14px;
+
+  opacity: 0;
+  transform: translateX(20px);
+  transition: transform 0.45s ease, opacity 0.35s ease, right 0.45s ease;
+  z-index: 1000;
+}
+/* When opened */
+.navbar-search.active {
+  right: 20px;
+  opacity: 1;
+  transform: translateX(0);
+}
+
+
+.navbar-search.active {
+  right: 20px;
+  /* SLIDE IN ✔ */
 }
 
 .search-field {
   flex: 1;
   border: none;
   outline: none;
-  font-size: 18px;
+  font-size: 17px;
 }
 
+/* Beautiful round blue search button */
+/* Search icon */
 .search-icon {
   background: #007bff;
-  border: none;
-  padding: 10px 14px;
+  padding: 10px;
   border-radius: 50%;
   color: white;
+  border: none;
   cursor: pointer;
   font-size: 18px;
 }
+
 
 /* ================= ISLAND CARDS SECTION ================= */
 /* ----- Islands section layout ----- */
@@ -288,7 +476,6 @@
   line-height: 1.6;
 }
 
-/* Decorative underline below title */
 .section-title::after {
   content: "";
   display: block;
@@ -710,6 +897,7 @@
   transition: 0.3s ease-in-out;
   box-shadow: 0 5px 30px rgba(0, 0, 0, 0.1);
 }
+
 .mega-menu.active {
   display: block !important;
 }
@@ -778,6 +966,7 @@
 .mega-links ul li a:hover {
   color: #0077b6;
 }
+
 .travel-info-section {
   padding: 80px 0;
 }
@@ -795,65 +984,304 @@
 }
 
 /* wrapper for each slider row */
-.travel-slider {
+
+.travel-info-section {
+  padding: 72px 0;
+  text-align: center;
+}
+
+.section-title {
+  font-size: 42px;
+  font-weight: 800;
+  margin-bottom: 8px;
+}
+
+.section-subtitle {
+  margin-bottom: 36px;
+  font-size: 17px;
+  color: #58636a;
+}
+
+/* slider wrapper (slightly smaller than before) */
+.big-slider {
+  width: 100%;
+  max-width: 1100px;
+  /* smaller than before for nicer margins */
+  margin: 36px auto;
   position: relative;
+}
+
+/* slides container */
+.big-slides {
+  width: 100%;
+  height: 380px;
+  /* a bit shorter */
+  position: relative;
+  overflow: hidden;
+  border-radius: 22px;
+  background: #f7f7f7;
+}
+
+/* individual slide layout */
+.big-slide {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  grid-template-columns: 40% 60%;
+  /* left blurred, right sharp */
+  opacity: 0;
+  transform: translateX(30px);
+  transition: opacity .5s ease, transform .5s ease;
+  pointer-events: none;
+}
+
+.big-slide.active {
+  opacity: 1;
+  transform: translateX(0);
+  pointer-events: auto;
+  z-index: 2;
+}
+
+/* LEFT: blurred art (same image but blurred) */
+.big-art {
+  background-size: cover !important;
+  background-position: center left !important;
+  filter: blur(8px) brightness(.86);
+  border-top-left-radius: 22px;
+  border-bottom-left-radius: 22px;
+  margin-left: -18px;
+  /* small overlap for rounded magazine effect */
+  box-shadow: 0 30px 60px rgba(3, 22, 28, 0.08);
+  /* ensure no duplicated background tile */
+  background-repeat: no-repeat !important;
+}
+
+/* RIGHT: sharp image panel */
+.big-image {
+  background-size: cover !important;
+  background-position: center right !important;
+  position: relative;
+  border-top-right-radius: 22px;
+  border-bottom-right-radius: 22px;
+  display: block;
+}
+
+/* OVERLAY TEXT — placed visually over the left (blur) area */
+.big-overlay {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  /* start at big-image left edge */
+  transform: translate(-110%, -50%);
+  /* shift left so overlay sits over blurred left */
+  width: 36%;
+  color: #fff;
+  text-align: left;
+  pointer-events: auto;
+}
+
+/* text styles */
+.big-overlay h3 {
+  font-size: 34px;
+  margin: 0 0 14px;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  text-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+}
+
+.big-overlay p {
+  margin: 0 0 18px;
+  font-size: 15px;
+  line-height: 1.6;
+  text-shadow: 0 6px 18px rgba(0, 0, 0, 0.28);
+}
+
+/* CTA */
+.btn-ghost {
+  background: #ffbf2e;
+  color: #06384b;
+  padding: 10px 18px;
+  border-radius: 6px;
+  font-weight: 800;
+  text-decoration: none;
+  box-shadow: 0 8px 20px rgba(5, 46, 60, 0.12);
+  display: inline-block;
+}
+
+/* ARROWS — transparent*/
+.big-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: transparent;
+  color: rgba(0, 40, 60, 0.95);
+  border: 0;
+  font-size: 28px;
+  width: 48px;
+  height: 48px;
+  cursor: pointer;
+  z-index: 40;
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: color .18s;
+  -webkit-tap-highlight-color: transparent;
 }
 
-/* arrows */
-.travel-arrow {
-  border: none;
-  background: transparent;
-  font-size: 24px;
-  cursor: pointer;
-  padding: 8px 12px;
-  color: #004b6b;
-  transition: transform 0.2s ease, color 0.2s ease;
-}
-
-.travel-arrow:hover {
-  transform: scale(1.15);
+.big-arrow:hover {
   color: #0077b6;
 }
 
-/* the pill card itself */
-.travel-slide {
-  max-width: 60vw;          /* ~60% of page */
-  width: 100%;
-  margin: 0 24px;
-  border-radius: 40px;
-  background: radial-gradient(circle at 0 0, #f3fbff 0, #dff3ff 60%, #d7f0ff 100%);
-  box-shadow: 0 22px 45px rgba(0, 0, 0, 0.18);
-  opacity: 0;
-  pointer-events: none;
-  transform: translateX(40px);
-  transition: opacity 0.4s ease, transform 0.4s ease;
+.big-prev {
+  left: 18px;
 }
 
-.travel-slide.active {
-  opacity: 1;
-  pointer-events: auto;
-  transform: translateX(0);
+.big-next {
+  right: 18px;
 }
 
-.travel-card-inner {
-  padding: 34px 40px 32px;
+/* prevent image tiling */
+.big-art,
+.big-image {
+  background-repeat: no-repeat !important;
+  background-size: cover !important;
 }
 
-.travel-slide-heading {
-  font-size: 22px;
-  font-weight: 700;
-  margin-bottom: 10px;
-  color: #005475;
+/* ======================
+   IMAGE SOURCES (update paths if needed)
+   ====================== */
+
+/* WAYS */
+#waysSlider .big-slide[data-slide="0"] .big-art,
+#waysSlider .big-slide[data-slide="0"] .big-image {
+  background-image: url("../utilities/pictures/flights.webp");
 }
 
-.travel-slide-text {
-  font-size: 15px;
-  line-height: 1.7;
-  color: #516772;
-  margin-bottom: 20px;
+#waysSlider .big-slide[data-slide="1"] .big-art,
+#waysSlider .big-slide[data-slide="1"] .big-image {
+  background-image: url("../utilities/pictures/pass_ships.jpg");
 }
 
-/* reuse your .travel-cta styles from before */
+#waysSlider .big-slide[data-slide="2"] .big-art,
+#waysSlider .big-slide[data-slide="2"] .big-image {
+  background-image: url("../utilities/pictures/insideships.webp");
+}
+
+/* STAY */
+#staySlider .big-slide[data-slide="0"] .big-art,
+#staySlider .big-slide[data-slide="0"] .big-image {
+  background-image: url("../utilities/pictures/islandresort.jpg");
+}
+
+#staySlider .big-slide[data-slide="1"] .big-art,
+#staySlider .big-slide[data-slide="1"] .big-image {
+  background-image: url("../utilities/pictures/hotels.jpg");
+}
+
+#staySlider .big-slide[data-slide="2"] .big-art,
+#staySlider .big-slide[data-slide="2"] .big-image {
+  background-image: url("../utilities/pictures/homestays.avif");
+}
+
+/* ===========================================
+   MOBILE & TABLET SLIDER FIX  (FINAL WORKING)
+   =========================================== */
+@media (max-width: 992px) {
+
+  /* Slider height smaller */
+  .big-slides {
+    height: 350px;
+  }
+
+  /* Keep grid layout so left blur + right image STILL WORK */
+  .big-slide {
+    position: absolute;
+    inset: 0;
+    display: grid;
+    grid-template-columns: 100%;
+    /* STACK */
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  .big-slide.active {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  /* LEFT BLUR will act as BACKGROUND for TEXT */
+  .big-art {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    filter: blur(10px) brightness(0.75);
+    border-radius: 22px;
+  }
+
+  /* RIGHT IMAGE BECOMES THE REAL IMAGE */
+  .big-image {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover !important;
+    background-position: center;
+    border-radius: 22px;
+  }
+
+  /* TEXT sits nicely INSIDE left blurred zone */
+  .big-overlay {
+    position: absolute;
+    left: 20px;
+    right: 20px;
+    bottom: 30px;
+    width: auto;
+    transform: none;
+    text-align: left;
+  }
+
+  .big-overlay h3 {
+    font-size: 26px;
+    line-height: 1.2;
+  }
+
+  .big-overlay p {
+    font-size: 15px;
+    max-width: 90%;
+  }
+
+  /* BUTTON */
+  .btn-ghost {
+    margin-top: 10px;
+  }
+
+  /* MINIMAL ARROWS */
+  .big-arrow {
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    width: 38px;
+    height: 38px;
+    font-size: 22px;
+    background: rgba(255, 255, 255, 0.25);
+    border-radius: 50%;
+    color: white;
+    border: none;
+    position: absolute;
+    top: 50%;
+    z-index: 40;
+    transform: translateY(-50%);
+  }
+
+  .big-prev {
+    left: 10px;
+  }
+
+  .big-next {
+    right: 10px;
+  }
+}
