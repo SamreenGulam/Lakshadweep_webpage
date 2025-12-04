@@ -210,3 +210,65 @@ if (searchOverlay && navbarSearch) {
   });
 
 });
+/* ============================
+   MAP SWITCHER
+============================ */
+// MAP SWITCHER (put inside DOMContentLoaded)
+(function () {
+  const mainMap = document.getElementById('mainMap');
+  const mapCaption = document.getElementById('mapCaption');
+  const islandButtons = Array.from(document.querySelectorAll('.island-item'));
+  const resetBtn = document.getElementById('resetMap');
+
+  if (!mainMap || islandButtons.length === 0) return;
+
+  function setActive(button) {
+    islandButtons.forEach(b => {
+      b.classList.toggle('active', b === button);
+      b.setAttribute('aria-pressed', b === button ? 'true' : 'false');
+    });
+  }
+
+  function showMap(imageSrc, name) {
+    // small fade swap
+    mainMap.style.opacity = 0;
+    setTimeout(() => {
+      mainMap.src = imageSrc;
+      mainMap.alt = `${name} map`;
+      mapCaption.textContent = name;
+      mainMap.style.opacity = 1;
+    }, 180);
+  }
+
+  // click/keyboard handlers
+  islandButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const img = btn.getAttribute('data-image');
+      const name = btn.getAttribute('data-name') || 'Island';
+      setActive(btn);
+      showMap(img, name);
+    });
+
+    // keyboard accessible (Enter / Space)
+    btn.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        btn.click();
+      }
+    });
+  });
+
+  // reset to default
+  if (resetBtn) {
+    resetBtn.addEventListener('click', () => {
+      const defaultBtn = document.querySelector('.island-item[data-name="Lakshadweep"]');
+      if (defaultBtn) defaultBtn.click();
+      else {
+        // fallback
+        const defaultSrc = 'utilities/pictures/maps/lakshadweep-map.webp';
+        showMap(defaultSrc, 'Lakshadweep');
+        setActive(null);
+      }
+    });
+  }
+})();

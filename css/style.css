@@ -466,6 +466,7 @@
   letter-spacing: 0.5px;
 }
 
+
 /* Subtitle styling */
 .section-subtitle {
   font-size: 18px;
@@ -984,6 +985,37 @@
 }
 
 /* wrapper for each slider row */
+/* Travel page  */
+/* Title styling for section subtitles */
+.subsection-title {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 18px;
+  margin-top: 40px;
+  color: #0a2a43;
+  letter-spacing: 0.3px;
+}
+
+/* Left-aligned version for Ways to get Here */
+.left-title {
+  text-align: left !important;
+  width: 100%;
+  max-width: 1250px;
+  margin: 0 auto 18px auto; /* match slider width */
+  padding-left: 70px;
+}
+
+/* Optional underline effect like modern travel sites */
+/* .left-title::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 3px;
+  background: #007bff;
+  border-radius: 5px;
+  margin-top: 6px;
+} */
+
 
 .travel-info-section {
   padding: 72px 0;
@@ -1021,6 +1053,7 @@
   border-radius: 22px;
   background: #f7f7f7;
 }
+
 
 /* individual slide layout */
 .big-slide {
@@ -1183,6 +1216,122 @@
 #staySlider .big-slide[data-slide="2"] .big-image {
   background-image: url("../utilities/pictures/homestays.avif");
 }
+/* MAP SECTION */
+#map-islands {
+  text-align: center !important;
+}
+.map-section-title {
+  font-size: 42px;
+  font-weight: 800;
+  margin-bottom: 10px;
+  text-align: center !important;
+}
+.map-section {
+  padding: 56px 0;
+}
+
+.map-wrap {
+  display: grid;
+  grid-template-columns: 1fr 380px;
+  gap: 28px;
+  align-items: start;
+  max-width: 1250px;
+  margin: 24px auto 48px;
+}
+
+/* main visual */
+.map-visual {
+  background: #fff;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  position: relative;
+}
+
+.map-visual img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  min-height: 420px;
+}
+
+/* caption */
+.map-caption {
+  position: absolute;
+  left: 18px;
+  bottom: 14px;
+  background: rgba(0,0,0,0.35);
+  color: #fff;
+  padding: 8px 12px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+/* controls (island list) */
+.map-controls {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.island-list {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+  align-content: start;
+  max-height: 520px;
+  overflow-y: auto;
+  padding-right: 6px;
+}
+
+/* island button */
+.island-item {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  background: #fff;
+  border: 1px solid rgba(5,46,60,0.06);
+  padding: 8px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: transform .18s ease, box-shadow .18s ease;
+  text-align: left;
+}
+
+.island-item img {
+  width: 84px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 6px;
+  flex-shrink: 0;
+}
+
+/* name */
+.island-item span {
+  font-weight: 700;
+  color: #06384b;
+}
+
+/* active state */
+.island-item.active {
+  box-shadow: 0 8px 24px rgba(5,46,60,0.12);
+  transform: translateY(-3px);
+  border-color: #007bff;
+}
+
+/* map action */
+.map-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.map-actions .btn-ghost {
+  width: 100%;
+  text-align: center;
+  padding: 10px 12px;
+}
 
 /* ===========================================
    MOBILE & TABLET SLIDER FIX  (FINAL WORKING)
@@ -1284,4 +1433,20 @@
   .big-next {
     right: 10px;
   }
+}
+/* map mobile view */
+@media (max-width: 992px) {
+  .map-wrap {
+    grid-template-columns: 1fr;
+  }
+  .island-list {
+    display: flex;
+    gap: 12px;
+    overflow-x: auto;
+    max-height: none;
+    padding: 8px 0;
+  }
+  .island-item { min-width: 150px; flex-direction: column; align-items: flex-start; }
+  .island-item img { width: 100%; height: 90px; }
+  .map-visual img { min-height: 320px; }
 }
