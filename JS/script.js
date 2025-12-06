@@ -48,48 +48,48 @@ document.addEventListener("DOMContentLoaded", function () {
    SEARCH OVERLAY 
 ==============================*/
 
-const searchOverlay = document.getElementById("searchOverlay");
-const navbarSearch = document.getElementById("navbarSearch");
-const searchField = document.querySelector(".search-field");
-const exploreTrigger = document.querySelector(".explore-trigger");
-const searchIcon = document.querySelector(".search-icon");
+  const searchOverlay = document.getElementById("searchOverlay");
+  const navbarSearch = document.getElementById("navbarSearch");
+  const searchField = document.querySelector(".search-field");
+  const exploreTrigger = document.querySelector(".explore-trigger");
+  const searchIcon = document.querySelector(".search-icon");
 
-function toggleSearch() {
-  if (!searchOverlay || !navbarSearch) return;
+  function toggleSearch() {
+    if (!searchOverlay || !navbarSearch) return;
 
-  // Toggle active states
-  searchOverlay.classList.toggle("active");
-  navbarSearch.classList.toggle("active");
+    // Toggle active states
+    searchOverlay.classList.toggle("active");
+    navbarSearch.classList.toggle("active");
 
-  // If search is now open → FOCUS cursor automatically
-  if (navbarSearch.classList.contains("active")) {
-    setTimeout(() => {
-      if (searchField) searchField.focus();
-    }, 250); // wait for animation to finish
-  }
-}
-
-// CLICK EVENTS
-if (exploreTrigger) {
-  exploreTrigger.addEventListener("click", (e) => {
-    e.preventDefault();
-    toggleSearch();
-  });
-}
-
-if (searchIcon) {
-  searchIcon.addEventListener("click", toggleSearch);
-}
-
-// CLOSE WHEN CLICKING OUTSIDE
-if (searchOverlay && navbarSearch) {
-  searchOverlay.addEventListener("click", (e) => {
-    if (e.target === searchOverlay) {
-      searchOverlay.classList.remove("active");
-      navbarSearch.classList.remove("active");
+    // If search is now open → FOCUS cursor automatically
+    if (navbarSearch.classList.contains("active")) {
+      setTimeout(() => {
+        if (searchField) searchField.focus();
+      }, 250); // wait for animation to finish
     }
-  });
-}
+  }
+
+  // CLICK EVENTS
+  if (exploreTrigger) {
+    exploreTrigger.addEventListener("click", (e) => {
+      e.preventDefault();
+      toggleSearch();
+    });
+  }
+
+  if (searchIcon) {
+    searchIcon.addEventListener("click", toggleSearch);
+  }
+
+  // CLOSE WHEN CLICKING OUTSIDE
+  if (searchOverlay && navbarSearch) {
+    searchOverlay.addEventListener("click", (e) => {
+      if (e.target === searchOverlay) {
+        searchOverlay.classList.remove("active");
+        navbarSearch.classList.remove("active");
+      }
+    });
+  }
 
   /* ============================
       MEGA DROPDOWN (ISLANDS)
@@ -100,11 +100,15 @@ if (searchOverlay && navbarSearch) {
 
   if (dropdownMega && megaMenu) {
     dropdownMega.addEventListener("mouseenter", () => {
+      clearTimeout(hideTimeout);
       megaMenu.classList.add("show");
     });
+    let hideTimeout;
 
     dropdownMega.addEventListener("mouseleave", () => {
-      megaMenu.classList.remove("show");
+      hideTimeout = setTimeout(() => {
+        megaMenu.classList.remove("show");
+      }, 200);
     });
   }
 
@@ -271,4 +275,50 @@ if (searchOverlay && navbarSearch) {
       }
     });
   }
+})();
+// Slide animation//
+document.addEventListener("DOMContentLoaded", () => {
+  const elements = document.querySelectorAll(".scroll-animate");
+
+  function revealOnScroll() {
+    elements.forEach(el => {
+      const rect = el.getBoundingClientRect();
+      if (rect.top < window.innerHeight - 100) {
+        el.classList.add("visible");
+      }
+    });
+  }
+
+  window.addEventListener("scroll", revealOnScroll);
+  revealOnScroll(); // initial check
+});
+// ===============================
+// EXPERIENCES SLIDER LOGIC
+// ===============================
+(() => {
+  const track = document.querySelector(".exp-track");
+  const cards = document.querySelectorAll(".exp-card");
+  const prev = document.querySelector(".exp-btn.prev");
+  const next = document.querySelector(".exp-btn.next");
+
+  let index = 0;
+
+  function update() {
+    const cardWidth = cards[0].offsetWidth + 24;
+    track.style.transform = `translateX(-${index * cardWidth}px)`;
+  }
+
+  next.addEventListener("click", () => {
+    if (index < cards.length - 1) {
+      index++;
+      update();
+    }
+  });
+
+  prev.addEventListener("click", () => {
+    if (index > 0) {
+      index--;
+      update();
+    }
+  });
 })();

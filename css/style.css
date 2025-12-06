@@ -40,6 +40,50 @@
   text-shadow: 0 3px 8px rgba(0, 0, 0, 0.35);
 }
 
+/* Import Playfair Display */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&display=swap');
+
+.intro-section {
+  padding: 80px 0 50px;
+  text-align: center;
+  width: 100%;
+  max-width: 1100px;
+  margin: auto;
+}
+
+.intro-title {
+  font-family: "Playfair Display", serif;
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: #0d1b2a;
+  margin-bottom: 15px;
+}
+
+.intro-text {
+  font-size: 1.15rem;
+  line-height: 1.75;
+  max-width: 850px;
+  margin: 0 auto;
+  color: #444;
+  font-weight: 400;
+}
+
+.intro-section {
+  animation: fadeUp 0.8s ease-out;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 /* ================= PLAN TRIP BUTTON ================= */
 .primary-trip-btn {
   background: linear-gradient(135deg, #007bff, #00c3ff);
@@ -171,6 +215,8 @@
   opacity: 1;
   pointer-events: auto;
 }
+
+/* Scroll Animation ////*/
 
 /* MOBILE MENU PANEL */
 .mobile-menu {
@@ -388,8 +434,10 @@
 .navbar-search {
   position: fixed;
   top: 18px;
-  right: -60%;          /* hidden off-screen */
-  width: 35%;           /* smaller width */
+  right: -60%;
+  /* hidden off-screen */
+  width: 35%;
+  /* smaller width */
   max-width: 500px;
   padding: 12px 22px;
   background: white;
@@ -403,6 +451,7 @@
   transition: transform 0.45s ease, opacity 0.35s ease, right 0.45s ease;
   z-index: 1000;
 }
+
 /* When opened */
 .navbar-search.active {
   right: 20px;
@@ -907,6 +956,11 @@
 /* SHOW MENU ON HOVER "ISLANDS" */
 /* default hidden */
 .mega-menu {
+  position: absolute;
+  top: 100%;
+  /* sits directly under the nav link (NO GAP) */
+  left: 0;
+  width: 100vw;
   display: none;
 }
 
@@ -1001,7 +1055,8 @@
   text-align: left !important;
   width: 100%;
   max-width: 1250px;
-  margin: 0 auto 18px auto; /* match slider width */
+  margin: 0 auto 18px auto;
+  /* match slider width */
   padding-left: 70px;
 }
 
@@ -1216,16 +1271,19 @@
 #staySlider .big-slide[data-slide="2"] .big-image {
   background-image: url("../utilities/pictures/homestays.avif");
 }
+
 /* MAP SECTION */
 #map-islands {
   text-align: center !important;
 }
+
 .map-section-title {
   font-size: 42px;
   font-weight: 800;
   margin-bottom: 10px;
   text-align: center !important;
 }
+
 .map-section {
   padding: 56px 0;
 }
@@ -1244,7 +1302,7 @@
   background: #fff;
   border-radius: 14px;
   overflow: hidden;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
   position: relative;
 }
 
@@ -1261,7 +1319,7 @@
   position: absolute;
   left: 18px;
   bottom: 14px;
-  background: rgba(0,0,0,0.35);
+  background: rgba(0, 0, 0, 0.35);
   color: #fff;
   padding: 8px 12px;
   border-radius: 8px;
@@ -1292,7 +1350,7 @@
   gap: 12px;
   align-items: center;
   background: #fff;
-  border: 1px solid rgba(5,46,60,0.06);
+  border: 1px solid rgba(5, 46, 60, 0.06);
   padding: 8px;
   border-radius: 10px;
   cursor: pointer;
@@ -1316,7 +1374,7 @@
 
 /* active state */
 .island-item.active {
-  box-shadow: 0 8px 24px rgba(5,46,60,0.12);
+  box-shadow: 0 8px 24px rgba(5, 46, 60, 0.12);
   transform: translateY(-3px);
   border-color: #007bff;
 }
@@ -1332,6 +1390,147 @@
   text-align: center;
   padding: 10px 12px;
 }
+
+/* =============================== */
+/* EXPERIENCES – CINEMATIC STYLE */
+/* =============================== */
+
+.lxw-exp-cinematic {
+  position: relative;
+  height: 90vh;
+  overflow: hidden;
+  color: white;
+}
+
+/* BACKGROUND VIDEO */
+.exp-bg-video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Overlay */
+.exp-bg-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(10, 15, 30, 0.55);
+}
+
+/* LAYOUT */
+.exp-wrapper {
+  position: relative;
+  z-index: 2;
+  height: 100%;
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 80px 40px;
+  display: grid;
+  grid-template-columns: 40% 60%;
+  align-items: center;
+  gap: 40px;
+}
+
+/* LEFT TEXT */
+.exp-text h2 {
+  font-family: "Playfair Display", serif;
+  font-size: 48px;
+  line-height: 1.1;
+  margin-bottom: 20px;
+}
+
+.exp-text p {
+  max-width: 420px;
+  font-size: 15px;
+  line-height: 1.8;
+  color: rgba(255,255,255,0.85);
+}
+
+/* SLIDER */
+.exp-slider {
+  position: relative;
+  overflow: hidden;
+}
+
+.exp-track {
+  display: flex;
+  gap: 24px;
+  transform: translateX(0);
+  transition: transform 0.8s cubic-bezier(.22,.61,.36,1);
+}
+
+/* CARDS */
+.exp-card {
+  min-width: 320px;
+  height: 420px;
+  border-radius: 20px;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: flex-end;
+  padding: 20px;
+  font-family: "Playfair Display", serif;
+  font-size: 20px;
+  box-shadow: 0 25px 60px rgba(0,0,0,0.45);
+  flex-shrink: 0;
+}
+
+.exp-card span {
+  opacity: 0.9;
+}
+
+/* CARD IMAGES */
+.exp-card-scuba {
+  background-image: url("../utilities/pictures/scoobaDiving.jpg");
+}
+
+.exp-card-surf {
+  background-image: url("../utilities/pictures/culture.jpg");
+}
+
+.exp-card-kayak {
+  background-image: url("../utilities/pictures/lagoonCruises.jpg");
+}
+
+.exp-card-lagoon {
+  background-image: url("../utilities/pictures/locals.jpg");
+}
+
+/* CONTROLS */
+.exp-controls {
+  margin-top: 16px;
+  display: flex;
+  gap: 14px;
+}
+
+.exp-btn {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1px solid rgba(255,255,255,0.5);
+  background: transparent;
+  color: white;
+  font-size: 22px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.exp-btn:hover {
+  background: white;
+  color: #000;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .exp-wrapper {
+    grid-template-columns: 1fr;
+  }
+  .lxw-exp-cinematic {
+    height: auto;
+  }
+}
+
 
 /* ===========================================
    MOBILE & TABLET SLIDER FIX  (FINAL WORKING)
@@ -1434,11 +1633,13 @@
     right: 10px;
   }
 }
+
 /* map mobile view */
 @media (max-width: 992px) {
   .map-wrap {
     grid-template-columns: 1fr;
   }
+
   .island-list {
     display: flex;
     gap: 12px;
@@ -1446,7 +1647,19 @@
     max-height: none;
     padding: 8px 0;
   }
-  .island-item { min-width: 150px; flex-direction: column; align-items: flex-start; }
-  .island-item img { width: 100%; height: 90px; }
-  .map-visual img { min-height: 320px; }
+
+  .island-item {
+    min-width: 150px;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .island-item img {
+    width: 100%;
+    height: 90px;
+  }
+
+  .map-visual img {
+    min-height: 320px;
+  }
 }
