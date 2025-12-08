@@ -48,48 +48,48 @@ document.addEventListener("DOMContentLoaded", function () {
    SEARCH OVERLAY 
 ==============================*/
 
-const searchOverlay = document.getElementById("searchOverlay");
-const navbarSearch = document.getElementById("navbarSearch");
-const searchField = document.querySelector(".search-field");
-const exploreTrigger = document.querySelector(".explore-trigger");
-const searchIcon = document.querySelector(".search-icon");
+  const searchOverlay = document.getElementById("searchOverlay");
+  const navbarSearch = document.getElementById("navbarSearch");
+  const searchField = document.querySelector(".search-field");
+  const exploreTrigger = document.querySelector(".explore-trigger");
+  const searchIcon = document.querySelector(".search-icon");
 
-function toggleSearch() {
-  if (!searchOverlay || !navbarSearch) return;
+  function toggleSearch() {
+    if (!searchOverlay || !navbarSearch) return;
 
-  // Toggle active states
-  searchOverlay.classList.toggle("active");
-  navbarSearch.classList.toggle("active");
+    // Toggle active states
+    searchOverlay.classList.toggle("active");
+    navbarSearch.classList.toggle("active");
 
-  // If search is now open → FOCUS cursor automatically
-  if (navbarSearch.classList.contains("active")) {
-    setTimeout(() => {
-      if (searchField) searchField.focus();
-    }, 250); // wait for animation to finish
-  }
-}
-
-// CLICK EVENTS
-if (exploreTrigger) {
-  exploreTrigger.addEventListener("click", (e) => {
-    e.preventDefault();
-    toggleSearch();
-  });
-}
-
-if (searchIcon) {
-  searchIcon.addEventListener("click", toggleSearch);
-}
-
-// CLOSE WHEN CLICKING OUTSIDE
-if (searchOverlay && navbarSearch) {
-  searchOverlay.addEventListener("click", (e) => {
-    if (e.target === searchOverlay) {
-      searchOverlay.classList.remove("active");
-      navbarSearch.classList.remove("active");
+    // If search is now open → FOCUS cursor automatically
+    if (navbarSearch.classList.contains("active")) {
+      setTimeout(() => {
+        if (searchField) searchField.focus();
+      }, 250); // wait for animation to finish
     }
-  });
-}
+  }
+
+  // CLICK EVENTS
+  if (exploreTrigger) {
+    exploreTrigger.addEventListener("click", (e) => {
+      e.preventDefault();
+      toggleSearch();
+    });
+  }
+
+  if (searchIcon) {
+    searchIcon.addEventListener("click", toggleSearch);
+  }
+
+  // CLOSE WHEN CLICKING OUTSIDE
+  if (searchOverlay && navbarSearch) {
+    searchOverlay.addEventListener("click", (e) => {
+      if (e.target === searchOverlay) {
+        searchOverlay.classList.remove("active");
+        navbarSearch.classList.remove("active");
+      }
+    });
+  }
 
   /* ============================
       MEGA DROPDOWN (ISLANDS)
@@ -100,11 +100,15 @@ if (searchOverlay && navbarSearch) {
 
   if (dropdownMega && megaMenu) {
     dropdownMega.addEventListener("mouseenter", () => {
+      clearTimeout(hideTimeout);
       megaMenu.classList.add("show");
     });
+    let hideTimeout;
 
     dropdownMega.addEventListener("mouseleave", () => {
-      megaMenu.classList.remove("show");
+      hideTimeout = setTimeout(() => {
+        megaMenu.classList.remove("show");
+      }, 200);
     });
   }
 
@@ -210,65 +214,102 @@ if (searchOverlay && navbarSearch) {
   });
 
 });
-/* ============================
-   MAP SWITCHER
-============================ */
-// MAP SWITCHER (put inside DOMContentLoaded)
-(function () {
+// MAP INTERACTION
+document.addEventListener('DOMContentLoaded', function () {
   const mainMap = document.getElementById('mainMap');
   const mapCaption = document.getElementById('mapCaption');
-  const islandButtons = Array.from(document.querySelectorAll('.island-item'));
+  const islandButtons = document.querySelectorAll('.island-item');
   const resetBtn = document.getElementById('resetMap');
 
-  if (!mainMap || islandButtons.length === 0) return;
+  const defaultSrc = '../utilities/maps/map.jpg';
+  const defaultCaption = 'Lakshadweep (overview)';
 
-  function setActive(button) {
+  function setActiveIsland(btn) {
+    const newSrc = btn.getAttribute('data-image');
+    const name = btn.getAttribute('data-name');
+
+    if (newSrc) {
+      mainMap.src = newSrc;
+    }
+    mapCaption.textContent =
+      name === 'Lakshadweep' ? defaultCaption : `${name} island`;
+
     islandButtons.forEach(b => {
-      b.classList.toggle('active', b === button);
-      b.setAttribute('aria-pressed', b === button ? 'true' : 'false');
+      b.classList.remove('active');
+      b.setAttribute('aria-pressed', 'false');
     });
+    btn.classList.add('active');
+    btn.setAttribute('aria-pressed', 'true');
   }
 
-  function showMap(imageSrc, name) {
-    // small fade swap
-    mainMap.style.opacity = 0;
-    setTimeout(() => {
-      mainMap.src = imageSrc;
-      mainMap.alt = `${name} map`;
-      mapCaption.textContent = name;
-      mainMap.style.opacity = 1;
-    }, 180);
-  }
-
-  // click/keyboard handlers
   islandButtons.forEach(btn => {
-    btn.addEventListener('click', () => {
-      const img = btn.getAttribute('data-image');
-      const name = btn.getAttribute('data-name') || 'Island';
-      setActive(btn);
-      showMap(img, name);
-    });
-
-    // keyboard accessible (Enter / Space)
+    btn.addEventListener('click', () => setActiveIsland(btn));
     btn.addEventListener('keydown', (e) => {
       if (e.key === 'Enter' || e.key === ' ') {
         e.preventDefault();
-        btn.click();
+        setActiveIsland(btn);
       }
     });
   });
 
-  // reset to default
   if (resetBtn) {
     resetBtn.addEventListener('click', () => {
-      const defaultBtn = document.querySelector('.island-item[data-name="Lakshadweep"]');
-      if (defaultBtn) defaultBtn.click();
-      else {
-        // fallback
-        const defaultSrc = 'utilities/pictures/maps/lakshadweep-map.webp';
-        showMap(defaultSrc, 'Lakshadweep');
-        setActive(null);
-      }
+      mainMap.src = defaultSrc;
+      mapCaption.textContent = defaultCaption;
+
+      islandButtons.forEach(b => {
+        const name = b.getAttribute('data-name');
+        const isDefault = name === 'Lakshadweep';
+        b.classList.toggle('active', isDefault);
+        b.setAttribute('aria-pressed', isDefault ? 'true' : 'false');
+      });
     });
   }
+});
+
+// ===============================
+// EXPERIENCES SLIDER LOGIC
+// ===============================
+(() => {
+  const track = document.querySelector(".exp-track");
+  const cards = document.querySelectorAll(".exp-card");
+  const prev = document.querySelector(".exp-btn.prev");
+  const next = document.querySelector(".exp-btn.next");
+
+  let index = 0;
+
+  function update() {
+    const cardWidth = cards[0].offsetWidth + 24;
+    track.style.transform = `translateX(-${index * cardWidth}px)`;
+  }
+
+  next.addEventListener("click", () => {
+    if (index < cards.length - 1) {
+      index++;
+      update();
+    }
+  });
+
+  prev.addEventListener("click", () => {
+    if (index > 0) {
+      index--;
+      update();
+    }
+  });
 })();
+// Scroll reveal for editorial sections
+document.addEventListener("DOMContentLoaded", () => {
+  const editorialSection = document.querySelector(".permit-editorial-inner");
+
+  const observer = new IntersectionObserver(
+    ([entry]) => {
+      if (entry.isIntersecting) {
+        editorialSection.classList.add("is-visible");
+        observer.disconnect();
+      }
+    },
+    { threshold: 0.3 }
+  );
+
+  observer.observe(editorialSection);
+});

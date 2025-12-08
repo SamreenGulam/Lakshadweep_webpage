@@ -93,13 +93,13 @@
 
               <div class="mega-links">
                 <ul>
-                  <li><a href="#">Ways to get here</a></li>
+                  <li><a href="#waysSlider">Ways to get here</a></li>
                 </ul>
                 <ul>
-                  <li><a href="#">Stay</a></li>
+                  <li><a href="#staySlider">Stay</a></li>
                 </ul>
                 <ul>
-                  <li><a href="#">Map</a></li>
+                  <li><a href="#map-section">Map</a></li>
                 </ul>
               </div>
 
@@ -112,7 +112,7 @@
         </li>
 
         <li class="nav-item">
-          <a class="nav-link" href="#">Entry Permit</a>
+          <a class="nav-link" href="#entry-permit">Entry Permit</a>
         </li>
 
         <li class="nav-item">
@@ -181,7 +181,27 @@
       <button class="trip-btn primary-trip-btn">Plan Your Trip</button>
     </div>
   </header>
+  <!-- =============================== -->
+  <!--   LAKSHADWEEP INTRO SECTION    -->
+  <!-- =============================== -->
+  <section class="intro-section">
+    <div class="container">
 
+      <h2 class="intro-title">Welcome to Lakshadweep</h2>
+
+      <p class="intro-text">
+        Lakshadweep, a breathtaking archipelago of 36 islands scattered across
+        the Arabian Sea, is India’s most stunning tropical escape. Crystal‑clear
+        lagoons, unspoiled coral reefs, white‑sand beaches, and vibrant marine life
+        make it a dream destination for travellers seeking serenity and adventure.
+        Each island carries its own charm — from peaceful village life to world‑class
+        diving sites and turquoise lagoons. Whether you’re planning a relaxing
+        holiday, exploring untouched nature, or immersing yourself in the culture
+        of the islands, Lakshadweep promises an unforgettable experience.
+      </p>
+
+    </div>
+  </section>
   <!-- ISLAND CARDS SECTION -->
   <section id="islands" class="islands-section container">
     <h2 class="section-title">Islands to Explore</h2>
@@ -275,7 +295,7 @@
 
 
   <!-- TRAVEL INFO  -->
-  <section id="travel-info" class="travel-info-section">
+  <section id="travel-info" class="travel-info-section" class="map-section scroll-animate">
     <div class="container">
 
       <h2 class="section-title">Travel Info</h2>
@@ -394,113 +414,260 @@
       </div>
 
     </div>
-    <!-- Map  -->
-    <!-- MAP SECTION -->
-    <section id="map-section" class="map-section">
-      <div class="container">
-        <h2 class="section-title">Map & Islands</h2>
-        <p class="section-subtitle">Select an island to view its map</p>
+   <!-- MAP SECTION -->
+<section id="map-section" class="map-section">
+  <div class="container">
+    <h2 class="section-title">Map & Islands</h2>
+    <p class="section-subtitle">Select an island to view its map</p>
 
-        <div class="map-wrap">
-          <div class="map-visual">
-            <!-- main map image (use <img> for accessibility) -->
-            <img id="mainMap" src="../utilities/maps/map.jpg"
-              alt="Map of Lakshadweep islands (default)" />
-            <!-- optional caption -->
-            <div class="map-caption" id="mapCaption">Lakshadweep (overview)</div>
-          </div>
+    <div class="map-wrap">
+      <!-- MAIN MAP VISUAL -->
+      <div class="map-visual">
+        <img
+          id="mainMap"
+          src="utilities/maps/map.jpg"
+          alt="Map of Lakshadweep islands (overview)"
+        />
+        <div class="map-caption" id="mapCaption">Lakshadweep (overview)</div>
+      </div>
 
-          <div class="map-controls">
-            <div class="island-list" role="list" aria-label="Select island">
-              <!-- Button template: data-image points to the map file -->
-              <button class="island-item active" data-image="../utilities/maps/map.jpg"
-                data-name="Lakshadweep" aria-pressed="true" role="listitem">
-                <img src="../utilities/maps/map.jpg" alt="Lakshadweep overview thumbnail" />
-                <span>All islands</span>
-              </button>
+      <!-- CONTROLS -->
+      <div class="map-controls scroll-animate">
+        <div class="island-list" role="list" aria-label="Select island">
+          <!-- All islands -->
+          <button
+            class="island-item active map-thumb-all"
+            data-image="../utilities/maps/map.jpg"
+            data-name="Lakshadweep"
+            aria-pressed="true"
+            role="listitem"
+          >
+            <div class="map-thumb"></div>
+            <span>All islands</span>
+          </button>
 
-              <button class="island-item" data-image="../utilities/maps/agattiMap.jpg" data-name="Agatti"
-                aria-pressed="false">
-                <img src="../utilities/maps/agattiMap.jpg" alt="Agatti island map thumbnail" />
-                <span>Agatti</span>
-              </button>
+          <!-- Agatti -->
+          <button
+            class="island-item map-thumb-agatti"
+            data-image="../utilities/maps/agattiMap.jpg"
+            data-name="Agatti"
+            aria-pressed="false"
+          >
+            <div class="map-thumb"></div>
+            <span>Agatti</span>
+          </button>
 
-              <button class="island-item" data-image="../utilities/maps/bangarammap.png" data-name="Bangaram"
-                aria-pressed="false">
-                <img src="../utilities/maps/bangarammap.png" alt="Bangaram island map thumbnail" />
-                <span>Bangaram</span>
-              </button>
+          <!-- Bangaram -->
+          <button
+            class="island-item map-thumb-bangaram"
+            data-image="../utilities/maps/bangarammap.png"
+            data-name="Bangaram"
+            aria-pressed="false"
+          >
+            <div class="map-thumb"></div>
+            <span>Bangaram</span>
+          </button>
 
-              <button class="island-item" data-image="../utilities/maps/minicoymap.png" data-name="Minicoy"
-                aria-pressed="false">
-                <img src="../utilities/maps/minicoymap.png" alt="Minicoy island map thumbnail" />
-                <span>Minicoy</span>
-              </button>
+          <!-- Minicoy -->
+          <button
+            class="island-item map-thumb-minicoy"
+            data-image="../utilities/maps/minicoymap.png"
+            data-name="Minicoy"
+            aria-pressed="false"
+          >
+            <div class="map-thumb"></div>
+            <span>Minicoy</span>
+          </button>
 
-              <button class="island-item" data-image="../utilities/maps/kavarattimap.png" data-name="Kavaratti"
-                aria-pressed="false">
-                <img src="../utilities/maps/kavarattimap.png" alt="Kavaratti island map thumbnail" />
-                <span>Kavaratti</span>
-              </button>
+          <!-- Kavaratti -->
+          <button
+            class="island-item map-thumb-kavaratti"
+            data-image="../utilities/maps/kavarattimap.png"
+            data-name="Kavaratti"
+            aria-pressed="false"
+          >
+            <div class="map-thumb"></div>
+            <span>Kavaratti</span>
+          </button>
 
-              <button class="island-item" data-image="../utilities/maps/kalpeniMap.jpg" data-name="Kalpeni"
-                aria-pressed="false">
-                <img src="../utilities/maps/kalpeniMap.jpg" alt="Kalpeni island map thumbnail" />
-                <span>Kalpeni</span>
-              </button>
+          <!-- Kalpeni -->
+          <button
+            class="island-item map-thumb-kalpeni"
+            data-image="../utilities/maps/kalpeniMap.jpg"
+            data-name="Kalpeni"
+            aria-pressed="false"
+          >
+            <div class="map-thumb"></div>
+            <span>Kalpeni</span>
+          </button>
 
-              <button class="island-item" data-image="../utilities/maps/aminimap.png" data-name="Amini"
-                aria-pressed="false">
-                <img src="../utilities/maps/aminimap.png" alt="Amini island map thumbnail" />
-                <span>Amini</span>
-              </button>
+          <!-- Amini -->
+          <button
+            class="island-item map-thumb-amini"
+            data-image="../utilities/maps/aminimap.png"
+            data-name="Amini"
+            aria-pressed="false"
+          >
+            <div class="map-thumb"></div>
+            <span>Amini</span>
+          </button>
 
-              <button class="island-item" data-image="../utilities/maps/kadmatMap.jpg" data-name="Kadmat"
-                aria-pressed="false">
-                <img src="../utilities/maps/kadmatMap.jpg" alt="Kadmat island map thumbnail" />
-                <span>Kadmat</span>
-              </button>
+          <!-- Kadmat -->
+          <button
+            class="island-item map-thumb-kadmat"
+            data-image="../utilities/maps/kadmatMap.jpg"
+            data-name="Kadmat"
+            aria-pressed="false"
+          >
+            <div class="map-thumb"></div>
+            <span>Kadmat</span>
+          </button>
 
-              <button class="island-item" data-image="../utilities/maps/kiltanMap.png" data-name="Kiltan"
-                aria-pressed="false">
-                <img src="../utilities/maps/kiltanMap.png" alt="Kiltan island map thumbnail" />
-                <span>Kiltan</span>
-              </button>
+          <!-- Kiltan -->
+          <button
+            class="island-item map-thumb-kiltan"
+            data-image="../utilities/maps/kiltanMap.png"
+            data-name="Kiltan"
+            aria-pressed="false"
+          >
+            <div class="map-thumb"></div>
+            <span>Kiltan</span>
+          </button>
 
-              <button class="island-item" data-image="../utilities/maps/bitraMap.png" data-name="Bitra"
-                aria-pressed="false">
-                <img src="../utilities/maps/bitraMap.png" alt="Bitra island map thumbnail" />
-                <span>Bitra</span>
-              </button>
+          <!-- Bitra -->
+          <button
+            class="island-item map-thumb-bitra"
+            data-image="../utilities/maps/bitraMap.png"
+            data-name="Bitra"
+            aria-pressed="false"
+          >
+            <div class="map-thumb"></div>
+            <span>Bitra</span>
+          </button>
 
-              <button class="island-item" data-image="../utilities/maps/androttMap.png" data-name="Andrott"
-                aria-pressed="false">
-                <img src="../utilities/maps/androttMap.png" alt="Andrott island map thumbnail" />
-                <span>Andrott</span>
-              </button>
+          <!-- Andrott -->
+          <button
+            class="island-item map-thumb-andrott"
+            data-image="../utilities/maps/androttMap.png"
+            data-name="Andrott"
+            aria-pressed="false"
+          >
+            <div class="map-thumb"></div>
+            <span>Andrott</span>
+          </button>
 
-              <button class="island-item" data-image="../utilities/maps/chetlatMap.png" data-name="Chetlat"
-                aria-pressed="false">
-                <img src="../utilities/maps/chetlatMap.png" alt="Chetlat island map thumbnail" />
-                <span>Chetlat</span>
-              </button>
-            </div>
+          <!-- Chetlat -->
+          <button
+            class="island-item map-thumb-chetlat"
+            data-image="../utilities/maps/chetlatMap.png"
+            data-name="Chetlat"
+            aria-pressed="false"
+          >
+            <div class="map-thumb"></div>
+            <span>Chetlat</span>
+          </button>
+        </div>
 
-            <div class="map-actions">
-              <button id="resetMap" class="btn-ghost">Show Lakshadweep</button>
-            </div>
-          </div>
+        <div class="map-actions">
+          <button id="resetMap" class="btn-ghost">Show Lakshadweep</button>
         </div>
       </div>
+    </div>
+  </div>
+</section>
+
+    <!-- =============================== -->
+    <!--  EXPERIENCES – CINEMATIC STYLE -->
+    <!-- =============================== -->
+    <section class="lxw-exp-cinematic">
+
+      <!-- BACKGROUND VIDEO -->
+      <video class="exp-bg-video" autoplay muted loop playsinline>
+        <!-- replace with your video -->
+        <source src="utilities/videos/expBackground.mp4" type="video/mp4">
+      </video>
+
+      <!-- DARK OVERLAY -->
+      <div class="exp-bg-overlay"></div>
+
+      <div class="exp-wrapper">
+
+        <!-- LEFT TEXT -->
+        <div class="exp-text">
+          <h2>Memories<br>for a Lifetime</h2>
+          <p>
+            In Lakshadweep, life unfolds gently — beneath turquoise waters,
+            across coral reefs and along quiet shores. Each experience is
+            unhurried, intimate and shaped by the sea.
+          </p>
+        </div>
+
+        <!-- RIGHT CARD SLIDER -->
+        <div class="exp-slider">
+
+          <div class="exp-track">
+            <a href="water-activities.html" class="exp-link">
+              <div class="exp-card exp-card-scuba">
+                <span>Water Activities</span>
+              </div>
+            </a>
+            <a href="culture-heritage.html" class="exp-link">
+              <div class="exp-card exp-card-surf">
+                <span>Culture, Arts and Mosques</span>
+              </div>
+            </a>
+            <a href="lagoon-cruises.html" class="exp-link">
+              <div class="exp-card exp-card-kayak">
+                <span>Lagoon Cruises</span>
+              </div>
+            </a>
+            <a href="shopping-local.html" class="exp-link">
+              <div class="exp-card exp-card-lagoon">
+                <span>Shopping and Local Experiences</span>
+              </div>
+            </a>
+
+          </div>
+
+          <!-- CONTROLS -->
+          <div class="exp-controls">
+            <button class="exp-btn prev">‹</button>
+            <button class="exp-btn next">›</button>
+          </div>
+
+        </div>
+
+      </div>
     </section>
+    <!-- ENTRY PERMIT – EDITORIAL SCROLL SECTION -->
+    <section id="entry-permit" class="permit-editorial">
+      <div class="permit-editorial-inner">
+        <h2>Entry Permit Required</h2>
+
+        <p>
+          Most visitors require an entry permit to visit Lakshadweep.
+          The permit process is managed by the Administration of the
+          Union Territory of Lakshadweep and may vary based on visitor
+          category, island selection, and duration of stay. Travellers
+          are advised to review the latest guidelines and apply through
+          authorised channels before planning their journey.
+        </p>
+
+        <a href="./entry-permit.html" class="permit-editorial-link">
+          Know more about entry permits →
+        </a>
+      </div>
+    </section>
+
+
+
 
 
     <!-- SCRIPTS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="JS/ux4g.bundle.min.js"></script>
     <script src="JS/script.js"></script>
-
-
+    <script src="https://unpkg.com/scrollreveal"></script>
 </body>
 
 </html>
