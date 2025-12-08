@@ -612,7 +612,7 @@
 
 /* INDIVIDUAL ISLAND BACKGROUNDS (paths are correct for css/style.css) */
 .island-card.agatti {
-  background-image: url("../utilities/pictures/agatti.jpg");
+  background-image: url("../utilities/pictures/agatti_islandpfp.jpg");
 }
 
 .island-card.minicoy {
@@ -620,7 +620,7 @@
 }
 
 .island-card.bangaram {
-  background-image: url("../utilities/pictures/bangaram.jpg");
+  background-image: url("../utilities/pictures/bangram_island_pfp.jpg");
 }
 
 .island-card.kavaratti {
@@ -634,12 +634,12 @@
 }
 
 .island-card.kadmat {
-  background-image: url("../utilities/pictures/kadmat.png");
+  background-image: url("../utilities/pictures/kadmat_islandpfp.jpg");
   /* or kavaratti.jpg */
 }
 
 .island-card.kalpeni {
-  background-image: url("../utilities/pictures/kalpeni.jpg");
+  background-image: url("../utilities/pictures/kalpeni_islandpfp.jpg");
   /* or kavaratti.jpg */
 }
 
@@ -654,7 +654,7 @@
 }
 
 .island-card.bitra {
-  background-image: url("../utilities/pictures/bitra.webp");
+  background-image: url("../utilities/pictures/bitra_islandpfp.jpg");
   /* or kavaratti.jpg */
 }
 
@@ -1273,24 +1273,27 @@
 }
 
 /* MAP SECTION */
-#map-islands {
-  text-align: center !important;
-}
-
-.map-section-title {
-  font-size: 42px;
-  font-weight: 800;
-  margin-bottom: 10px;
-  text-align: center !important;
-}
-
 .map-section {
   padding: 56px 0;
 }
 
+.map-section .section-title {
+  font-size: 42px;
+  font-weight: 800;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.map-section .section-subtitle {
+  text-align: center;
+  color: #44545e;
+  margin-bottom: 22px;
+}
+
+/* layout */
 .map-wrap {
   display: grid;
-  grid-template-columns: 1fr 380px;
+  grid-template-columns: minmax(0, 1fr) 380px;
   gap: 28px;
   align-items: start;
   max-width: 1250px;
@@ -1327,13 +1330,14 @@
   font-size: 14px;
 }
 
-/* controls (island list) */
+/* controls (island list + button) */
 .map-controls {
   display: flex;
   flex-direction: column;
   gap: 16px;
 }
 
+/* list of islands */
 .island-list {
   display: grid;
   grid-template-columns: 1fr;
@@ -1354,14 +1358,16 @@
   padding: 8px;
   border-radius: 10px;
   cursor: pointer;
-  transition: transform .18s ease, box-shadow .18s ease;
+  transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
   text-align: left;
 }
 
-.island-item img {
+/* Thumbnail replacing <img> */
+.map-thumb {
   width: 84px;
   height: 60px;
-  object-fit: cover;
+  background-size: cover;
+  background-position: center;
   border-radius: 6px;
   flex-shrink: 0;
 }
@@ -1372,14 +1378,20 @@
   color: #06384b;
 }
 
+/* hover */
+.island-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(5, 46, 60, 0.12);
+}
+
 /* active state */
 .island-item.active {
-  box-shadow: 0 8px 24px rgba(5, 46, 60, 0.12);
+  box-shadow: 0 8px 24px rgba(5, 46, 60, 0.18);
   transform: translateY(-3px);
   border-color: #007bff;
 }
 
-/* map action */
+/* map action button row */
 .map-actions {
   display: flex;
   gap: 10px;
@@ -1390,6 +1402,60 @@
   text-align: center;
   padding: 10px 12px;
 }
+
+/* ========================== */
+/* THUMBNAIL BACKGROUNDS      */
+/* ========================== */
+
+.map-thumb-all {
+  --thumb-url: url("../utilities/maps/map.jpg");
+}
+.map-thumb-agatti {
+  --thumb-url: url("../utilities/maps/agattiMap.jpg");
+}
+.map-thumb-bangaram {
+  --thumb-url: url("../utilities/maps/bangarammap.png");
+}
+.map-thumb-minicoy {
+  --thumb-url: url("../utilities/maps/minicoymap.png");
+}
+.map-thumb-kavaratti {
+  --thumb-url: url("../utilities/maps/kavarattimap.png");
+}
+.map-thumb-kalpeni {
+  --thumb-url: url("../utilities/maps/kalpeniMap.jpg");
+}
+.map-thumb-amini {
+  --thumb-url: url("../utilities/maps/aminimap.png");
+}
+.map-thumb-kadmat {
+  --thumb-url: url("../utilities/maps/kadmatMap.jpg");
+}
+.map-thumb-kiltan {
+  --thumb-url: url("../utilities/maps/kiltanMap.png");
+}
+.map-thumb-bitra {
+  --thumb-url: url("../utilities/maps/bitraMap.png");
+}
+.map-thumb-andrott {
+  --thumb-url: url("../utilities/maps/androttMap.png");
+}
+.map-thumb-chetlat {
+  --thumb-url: url("../utilities/maps/chetlatMap.png");
+}
+
+/* apply background from CSS variable */
+.island-item .map-thumb {
+  background-image: var(--thumb-url);
+}
+
+/* responsive */
+@media (max-width: 900px) {
+  .map-wrap {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
 
 /* =============================== */
 /* EXPERIENCES – CINEMATIC STYLE */
@@ -1661,5 +1727,67 @@
 
   .map-visual img {
     min-height: 320px;
+  }
+}
+/* /* ENTRY PERMIT – EDITORIAL STYLE / */
+.permit-editorial {
+  padding: 120px 20px;
+  background: #ffffff;
+}
+
+.permit-editorial-inner {
+  max-width: 760px;            /* controls text width */
+  margin: 0 auto;
+  text-align: center;
+
+  opacity: 1 !important;
+  transform: none !important;
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+/* visible on scroll */
+.permit-editorial.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.permit-editorial h2 {
+  font-family: "Playfair Display", serif;
+  font-size: 44px;
+  font-weight: 700;
+  margin-bottom: 28px;
+  color: #0b1e2d;
+}
+
+.permit-editorial p {
+  font-size: 18px;
+  line-height: 1.9;
+  color: #3b4a56;
+  margin-bottom: 22px;
+}
+
+.permit-editorial-link {
+  font-size: 16px;
+  font-weight: 600;
+  color: #0b7285;
+  text-decoration: none;
+}
+
+.permit-editorial-link:hover {
+  text-decoration: underline;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .permit-editorial {
+    padding: 80px 20px;
+  }
+
+  .permit-editorial h2 {
+    font-size: 34px;
+  }
+
+  .permit-editorial p {
+    font-size: 16px;
   }
 }

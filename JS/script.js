@@ -214,84 +214,59 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
 });
-/* ============================
-   MAP SWITCHER
-============================ */
-// MAP SWITCHER (put inside DOMContentLoaded)
-(function () {
+// MAP INTERACTION
+document.addEventListener('DOMContentLoaded', function () {
   const mainMap = document.getElementById('mainMap');
   const mapCaption = document.getElementById('mapCaption');
-  const islandButtons = Array.from(document.querySelectorAll('.island-item'));
+  const islandButtons = document.querySelectorAll('.island-item');
   const resetBtn = document.getElementById('resetMap');
 
-  if (!mainMap || islandButtons.length === 0) return;
+  const defaultSrc = '../utilities/maps/map.jpg';
+  const defaultCaption = 'Lakshadweep (overview)';
 
-  function setActive(button) {
+  function setActiveIsland(btn) {
+    const newSrc = btn.getAttribute('data-image');
+    const name = btn.getAttribute('data-name');
+
+    if (newSrc) {
+      mainMap.src = newSrc;
+    }
+    mapCaption.textContent =
+      name === 'Lakshadweep' ? defaultCaption : `${name} island`;
+
     islandButtons.forEach(b => {
-      b.classList.toggle('active', b === button);
-      b.setAttribute('aria-pressed', b === button ? 'true' : 'false');
+      b.classList.remove('active');
+      b.setAttribute('aria-pressed', 'false');
     });
+    btn.classList.add('active');
+    btn.setAttribute('aria-pressed', 'true');
   }
 
-  function showMap(imageSrc, name) {
-    // small fade swap
-    mainMap.style.opacity = 0;
-    setTimeout(() => {
-      mainMap.src = imageSrc;
-      mainMap.alt = `${name} map`;
-      mapCaption.textContent = name;
-      mainMap.style.opacity = 1;
-    }, 180);
-  }
-
-  // click/keyboard handlers
   islandButtons.forEach(btn => {
-    btn.addEventListener('click', () => {
-      const img = btn.getAttribute('data-image');
-      const name = btn.getAttribute('data-name') || 'Island';
-      setActive(btn);
-      showMap(img, name);
-    });
-
-    // keyboard accessible (Enter / Space)
+    btn.addEventListener('click', () => setActiveIsland(btn));
     btn.addEventListener('keydown', (e) => {
       if (e.key === 'Enter' || e.key === ' ') {
         e.preventDefault();
-        btn.click();
+        setActiveIsland(btn);
       }
     });
   });
 
-  // reset to default
   if (resetBtn) {
     resetBtn.addEventListener('click', () => {
-      const defaultBtn = document.querySelector('.island-item[data-name="Lakshadweep"]');
-      if (defaultBtn) defaultBtn.click();
-      else {
-        // fallback
-        const defaultSrc = 'utilities/pictures/maps/lakshadweep-map.webp';
-        showMap(defaultSrc, 'Lakshadweep');
-        setActive(null);
-      }
+      mainMap.src = defaultSrc;
+      mapCaption.textContent = defaultCaption;
+
+      islandButtons.forEach(b => {
+        const name = b.getAttribute('data-name');
+        const isDefault = name === 'Lakshadweep';
+        b.classList.toggle('active', isDefault);
+        b.setAttribute('aria-pressed', isDefault ? 'true' : 'false');
+      });
     });
   }
-})();
-// Slide animation//
-document.addEventListener("DOMContentLoaded", () => {
-  const elements = document.querySelectorAll(".scroll-animate");
-
-  function revealOnScroll() {
-    elements.forEach(el => {
-      const rect = el.getBoundingClientRect();
-      if (rect.top < window.innerHeight - 100) {
-        el.classList.add("visible");
-      }
-    });
-  }
-
-  window.addEventListener("scroll", revealOnScroll);
-  revealOnScroll(); // initial check
 });
+
 // ===============================
 // EXPERIENCES SLIDER LOGIC
 // ===============================
@@ -322,3 +297,19 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 })();
+// Scroll reveal for editorial sections
+document.addEventListener("DOMContentLoaded", () => {
+  const editorialSection = document.querySelector(".permit-editorial-inner");
+
+  const observer = new IntersectionObserver(
+    ([entry]) => {
+      if (entry.isIntersecting) {
+        editorialSection.classList.add("is-visible");
+        observer.disconnect();
+      }
+    },
+    { threshold: 0.3 }
+  );
+
+  observer.observe(editorialSection);
+});

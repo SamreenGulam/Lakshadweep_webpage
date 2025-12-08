@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Entry Permit | Lakshadweep</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@400;500;600&display=swap"
+        rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/entry-permit.css" />
+    <head>
+  <meta charset="UTF-8" />
+  <title>Entry Permit | Lakshadweep</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Cormorant Garamond -->
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="./styles/entry-permit.css" />
+</head>
+
+<body>
+
+    <!-- PAGE HEADER -->
+    <header class="permit-hero">
+        <div class="permit-hero-content">
+            <h1>Entry Permit</h1>
+            <p>
+                Most visitors require an entry permit to visit Lakshadweep.
+                Please review the latest process and official guidelines before planning your journey.
+            </p>
+        </div>
+    </header>
+
+    <!-- MAIN CONTENT -->
+    <main class="permit-container">
+
+        <!-- OVERVIEW -->
+        <section class="permit-section">
+            <h2>Permit Process – Overview</h2>
+
+            <div class="permit-steps">
+
+                <div class="permit-step">
+                    <span class="step-no">1</span>
+                    <div>
+                        <h3>Confirm your category</h3>
+                        <p>
+                            Entry rules may differ for residents, Indian tourists, officials and other categories.
+                            Begin by identifying which category applies to you.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="permit-step">
+                    <span class="step-no">2</span>
+                    <div>
+                        <h3>Choose islands & dates</h3>
+                        <p>
+                            Prepare a tentative travel plan. Permits are usually island‑specific and date‑specific.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="permit-step">
+                    <span class="step-no">3</span>
+                    <div>
+                        <h3>Apply through authorised channel</h3>
+                        <p>
+                            Applications must be submitted through the designated tourism office or
+                            official portal as notified by the Administration of the Union Territory of Lakshadweep.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="permit-step">
+                    <span class="step-no">4</span>
+                    <div>
+                        <h3>Carry permit & ID</h3>
+                        <p>
+                            Keep both digital and printed copies of your approved permit
+                            and a government‑issued photo ID throughout your journey.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- OFFICIAL LINK -->
+        <section class="permit-section permit-cta">
+            <h2>Official Permit Portal</h2>
+            <p>
+                Entry permit information is hosted on the official Lakshadweep Government portal.
+                Always verify details through authorised sources before applying.
+            </p>
+
+            <a href="https://lakshadweep.gov.in/tourism/entry-permit/" target="_blank" rel="noopener noreferrer" class="permit-btn">
+                Visit Official Permit Portal
+            </a>
+        </section>
+
+
+
+    </main>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const steps = document.querySelectorAll(".permit-step");
+  const baseDelay = 200;   // first card delay (ms)
+  const gap = 180;         // interval between cards
+
+  steps.forEach((step, index) => {
+    setTimeout(() => {
+      step.classList.add("visible");
+    }, baseDelay + index * gap);
+  });
+});
+</script>
+
+</body>
+
+</html>
