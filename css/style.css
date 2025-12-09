@@ -1551,15 +1551,19 @@
   background-image: url("../utilities/pictures/scoobaDiving.jpg");
 }
 
-.exp-card-surf {
+.exp-card-culture {
   background-image: url("../utilities/pictures/culture.jpg");
 }
 
-.exp-card-kayak {
+.exp-card-lagoon {
   background-image: url("../utilities/pictures/lagoonCruises.jpg");
 }
 
-.exp-card-lagoon {
+.exp-card-adventure {
+  background-image: url("../utilities/pictures/adventureActivities.jpg");
+}
+
+.exp-card-beach {
   background-image: url("../utilities/pictures/locals.jpg");
 }
 
