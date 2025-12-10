@@ -13,21 +13,23 @@
 
     <!-- CSS -->
     <link rel="stylesheet" href="css/entry-permit.css" />
+
     <head>
-  <meta charset="UTF-8" />
-  <title>Entry Permit | Lakshadweep</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta charset="UTF-8" />
+        <title>Entry Permit | Lakshadweep</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <!-- Cormorant Garamond -->
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&display=swap" rel="stylesheet">
+        <!-- Cormorant Garamond -->
+        <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&display=swap"
+            rel="stylesheet">
 
-  <link rel="stylesheet" href="./styles/entry-permit.css" />
-</head>
+        <link rel="stylesheet" href="./styles/entry-permit.css" />
+    </head>
 
 <body>
 
     <!-- PAGE HEADER -->
-    <header class="permit-hero">
+    <header class="permit-hero animate-fade-up">
         <div class="permit-hero-content">
             <h1>Entry Permit</h1>
             <p>
@@ -46,7 +48,7 @@
 
             <div class="permit-steps">
 
-                <div class="permit-step">
+                <div class="permit-step scroll-animate">
                     <span class="step-no">1</span>
                     <div>
                         <h3>Confirm your category</h3>
@@ -57,7 +59,7 @@
                     </div>
                 </div>
 
-                <div class="permit-step">
+                <div class="permit-step scroll-animate">
                     <span class="step-no">2</span>
                     <div>
                         <h3>Choose islands & dates</h3>
@@ -67,7 +69,7 @@
                     </div>
                 </div>
 
-                <div class="permit-step">
+                <div class="permit-step scroll-animate">
                     <span class="step-no">3</span>
                     <div>
                         <h3>Apply through authorised channel</h3>
@@ -78,7 +80,7 @@
                     </div>
                 </div>
 
-                <div class="permit-step">
+                <div class="permit-step scroll-animate">
                     <span class="step-no">4</span>
                     <div>
                         <h3>Carry permit & ID</h3>
@@ -100,7 +102,8 @@
                 Always verify details through authorised sources before applying.
             </p>
 
-            <a href="https://lakshadweep.gov.in/tourism/entry-permit/" target="_blank" rel="noopener noreferrer" class="permit-btn">
+            <a href="https://lakshadweep.gov.in/tourism/entry-permit/" target="_blank" rel="noopener noreferrer"
+                class="permit-btn">
                 Visit Official Permit Portal
             </a>
         </section>
@@ -108,19 +111,41 @@
 
 
     </main>
-<script>
-document.addEventListener("DOMContentLoaded", function () {
-  const steps = document.querySelectorAll(".permit-step");
-  const baseDelay = 200;   // first card delay (ms)
-  const gap = 180;         // interval between cards
+    <script>
 
-  steps.forEach((step, index) => {
-    setTimeout(() => {
-      step.classList.add("visible");
-    }, baseDelay + index * gap);
-  });
-});
-</script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const steps = document.querySelectorAll(".permit-step");
+            const baseDelay = 200;   // first card delay (ms)
+            const gap = 180;         // interval between cards
+
+            steps.forEach((step, index) => {
+                setTimeout(() => {
+                    step.classList.add("visible");
+                }, baseDelay + index * gap);
+            });
+        });
+        document.addEventListener("DOMContentLoaded", () => {
+            const items = document.querySelectorAll(".scroll-animate");
+
+            const observer = new IntersectionObserver(
+                entries => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add("show");
+                            observer.unobserve(entry.target); // animate once
+                        }
+                    });
+                },
+                {
+                    threshold: 0.15,
+                    rootMargin: "0px 0px -60px 0px"
+                }
+            );
+
+            items.forEach(el => observer.observe(el));
+        });
+
+    </script>
 
 </body>
 

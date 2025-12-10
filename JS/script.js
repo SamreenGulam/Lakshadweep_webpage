@@ -282,6 +282,10 @@ document.addEventListener('DOMContentLoaded', function () {
     const cardWidth = cards[0].offsetWidth + 24;
     track.style.transform = `translateX(-${index * cardWidth}px)`;
   }
+  function updateSlider() {
+    const cardWidth = cards[0].offsetWidth + 24; // 24 = gap
+    track.style.transform = `translateX(${-index * cardWidth}px)`;
+  }
 
   next.addEventListener("click", () => {
     if (index < cards.length - 1) {
@@ -296,6 +300,7 @@ document.addEventListener('DOMContentLoaded', function () {
       update();
     }
   });
+  update();
 })();
 // Scroll reveal for editorial sections
 document.addEventListener("DOMContentLoaded", () => {
