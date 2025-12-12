@@ -1,20 +1,46 @@
 /* ================= HERO SECTION ================= */
 .hero {
   height: 100vh;
-  background-image: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   display: flex;
   align-items: center;
   padding-left: 80px;
+  overflow: hidden;
 }
+/* Container holding all videos */
+.hero-videos {
+  position: absolute;
+  inset: 0;
+}
+.hero-videos video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;                 /* hidden by default */
+  transition: opacity 1.5s ease-in-out;
+}
+/* These classes will be controlled by JS */
+.hero-videos video.active {
+  opacity: 1;
+}
+
+/* first video visible initially */
+.hero-video.v1 {
+  opacity: 1;
+}
+
 
 .hero-content {
   position: relative;
-  text-align: left;
+  z-index: 10;
   color: white;
-  z-index: 2;
+  text-align: left;
+  padding-left: 50px;
+  padding-top: 150px;
 }
 
 .hero-content h1 {
@@ -38,6 +64,25 @@
 .hero-content h1,
 .hero-content p {
   text-shadow: 0 3px 8px rgba(0, 0, 0, 0.35);
+}
+
+/* Slideshow container */
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  animation: heroSlide 18s infinite ease-in-out;
+  z-index: -1;
+}
+
+/* TEXT STAYS ABOVE */
+.hero-content {
+  position: relative;
+  z-index: 2;
 }
 
 /* Import Playfair Display */
@@ -1410,36 +1455,47 @@
 .map-thumb-all {
   --thumb-url: url("../utilities/maps/map.jpg");
 }
+
 .map-thumb-agatti {
   --thumb-url: url("../utilities/maps/agattiMap.jpg");
 }
+
 .map-thumb-bangaram {
   --thumb-url: url("../utilities/maps/bangarammap.png");
 }
+
 .map-thumb-minicoy {
   --thumb-url: url("../utilities/maps/minicoymap.png");
 }
+
 .map-thumb-kavaratti {
   --thumb-url: url("../utilities/maps/kavarattimap.png");
 }
+
 .map-thumb-kalpeni {
   --thumb-url: url("../utilities/maps/kalpeniMap.jpg");
 }
+
 .map-thumb-amini {
   --thumb-url: url("../utilities/maps/aminimap.png");
 }
+
 .map-thumb-kadmat {
   --thumb-url: url("../utilities/maps/kadmatMap.jpg");
 }
+
 .map-thumb-kiltan {
   --thumb-url: url("../utilities/maps/kiltanMap.png");
 }
+
 .map-thumb-bitra {
   --thumb-url: url("../utilities/maps/bitraMap.png");
 }
+
 .map-thumb-andrott {
   --thumb-url: url("../utilities/maps/androttMap.png");
 }
+
 .map-thumb-chetlat {
   --thumb-url: url("../utilities/maps/chetlatMap.png");
 }
@@ -1510,7 +1566,7 @@
   max-width: 420px;
   font-size: 15px;
   line-height: 1.8;
-  color: rgba(255,255,255,0.85);
+  color: rgba(255, 255, 255, 0.85);
 }
 
 /* SLIDER */
@@ -1539,17 +1595,19 @@
   padding: 20px;
   font-family: "Playfair Display", serif;
   font-size: 20px;
-  box-shadow: 0 25px 60px rgba(0,0,0,0.45);
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.45);
   flex-shrink: 0;
 }
 
 .exp-card span {
   opacity: 0.9;
 }
+
 .exp-link {
   text-decoration: none;
   color: inherit;
-  display: block; /* makes full card clickable */
+  display: block;
+  /* makes full card clickable */
 }
 
 .exp-link:visited,
@@ -1592,7 +1650,7 @@
   width: 44px;
   height: 44px;
   border-radius: 50%;
-  border: 1px solid rgba(255,255,255,0.5);
+  border: 1px solid rgba(255, 255, 255, 0.5);
   background: transparent;
   color: white;
   font-size: 22px;
@@ -1604,6 +1662,7 @@
   background: white;
   color: #000;
 }
+
 /* /* ENTRY PERMIT – EDITORIAL STYLE / */
 .permit-editorial {
   padding: 120px 20px;
@@ -1611,7 +1670,8 @@
 }
 
 .permit-editorial-inner {
-  max-width: 760px;            /* controls text width */
+  max-width: 760px;
+  /* controls text width */
   margin: 0 auto;
   text-align: center;
 
@@ -1651,6 +1711,7 @@
 .permit-editorial-link:hover {
   text-decoration: underline;
 }
+
 /* ===========================================
    MOBILE & TABLET SLIDER FIX  (FINAL WORKING)
    =========================================== */
@@ -1752,11 +1813,13 @@
     right: 10px;
   }
 }
+
 /* exp mobile view */
 @media (max-width: 900px) {
   .exp-wrapper {
     grid-template-columns: 1fr;
   }
+
   .lxw-exp-cinematic {
     height: auto;
   }
@@ -1806,6 +1869,7 @@
     font-size: 16px;
   }
 }
+
 /* =============================== */
 /* SCROLL ANIMATION BASE */
 /* =============================== */
@@ -1814,6 +1878,7 @@
   transform: translateY(40px);
   transition: opacity 0.9s ease, transform 0.9s ease;
 }
+
 .scroll-animate.animate {
   opacity: 0;
   transform: translateY(40px);
@@ -1824,8 +1889,10 @@
   transform: translateY(0);
   transition: opacity 0.9s ease, transform 0.9s ease;
 }
+
 .lxw-exp-cinematic {
-  overflow: clip; /* modern + safe */
+  overflow: clip;
+  /* modern + safe */
 }
 
 /* Slide from left */
@@ -1845,6 +1912,7 @@
 .scroll-right.show {
   transform: translateX(0);
 }
+
 /* =============================== */
 /* ISLANDS SCROLL ANIMATION */
 /* =============================== */
@@ -1862,4 +1930,3 @@
   opacity: 1;
   transform: translateY(0) scale(1);
 }
-

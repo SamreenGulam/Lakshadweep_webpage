@@ -318,3 +318,19 @@ document.addEventListener("DOMContentLoaded", () => {
 
   observer.observe(editorialSection);
 });
+// Video background for home page
+document.addEventListener("DOMContentLoaded", () => {
+  const videos = document.querySelectorAll(".hero-videos video");
+  let index = 0;
+
+  // Show first video instantly (no flash)
+  videos[index].classList.add("active");
+
+  setInterval(() => {
+    videos[index].classList.remove("active");
+
+    index = (index + 1) % videos.length;
+
+    videos[index].classList.add("active");
+  }, 5000); // change every 5 seconds
+});

@@ -1,3 +1,6 @@
+/* ============================================================
+   RESET + BASE
+============================================================ */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -5,78 +8,169 @@
 }
 
 body {
-  font-family: "Inter", sans-serif;
-  color: #123;
+  font-family: "Cormorant Garamond", serif;
+  color: #10212b;
   background: #f7f9fb;
   line-height: 1.7;
 }
 
-/*  HERO */
+/* ============================================================
+   FULL‑SCREEN HERO IMAGE
+============================================================ */
 .permit-hero {
-  background: linear-gradient(180deg, #073b4c, #0b7285);
-  color: #fff;
-  padding: 90px 20px;
+  position: relative;
+  height: 100vh;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
   text-align: center;
+  padding: 0 20px 80px;
+  color: #fff;
+
+  /* 👇 Add your hero image here (CSS‑only) */
+  background: url("../utilities/pictures/entry-permit_bg.jpg") 
+              center center / cover no-repeat;
 }
 
 .permit-hero h1 {
-  font-family: "Playfair Display", serif;
-  font-size: 48px;
-  margin-bottom: 16px;
+  font-size: 56px;
+  font-weight: 700;
+  margin-bottom: 18px;
 }
 
 .permit-hero p {
-  max-width: 620px;
+  max-width: 650px;
   margin: 0 auto;
-  opacity: 0.95;
+  font-size: 20px;
 }
 
-/* / CONTAINER / */
+/* ============================================================
+   PAGE LAYOUT
+============================================================ */
 .permit-container {
-  max-width: 960px;
-  margin: 60px auto;
+  max-width: 1000px;
+  margin: 60px auto 80px;
   padding: 0 20px;
 }
 
-/* / SECTIONS / */
 .permit-section {
-  margin-bottom: 60px;
+  margin-bottom: 70px;
 }
 
 .permit-section h2 {
-  font-family: "Playfair Display", serif;
-  font-size: 32px;
+  font-size: 34px;
   margin-bottom: 28px;
+  font-weight: 600;
 }
 
-/* / STEPS / */
+/* ============================================================
+   STEP CARDS — BASE STYLE
+============================================================ */
 .permit-steps {
   display: grid;
-  gap: 24px;
+  gap: 32px;
 }
 
 .permit-step {
+  position: relative;
   display: flex;
-  gap: 18px;
-  background: #fff;
-  padding: 22px;
-  border-radius: 14px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, .06);
+  flex-direction: column;
+  justify-content: flex-end;
+
+  height: 380px; /* 👈 Bahamas-style tall section */
+  padding: 40px 50px;
+  border-radius: 24px;
+  overflow: hidden;
+  color: #ffffff;
+
+  /* smooth animation */
+  opacity: 0;
+  transform: translateY(25px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+
+  /* 👇 Default background (you can override per step) */
+  background: #0b7285;
+  background-size: cover;
+  background-position: center;
 }
 
-.step-no {
-  font-size: 22px;
-  font-weight: 700;
-  color: #0b7285;
-  min-width: 32px;
+/* when visible */
+.permit-step.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ============================================================
+   STEP — BACKGROUND IMAGES (CSS ONLY)
+   You will replace the URLs with your own files.
+============================================================ */
+.permit-step:nth-child(1) {
+  background-image: url("../utilities/entryPermit/step1.jpg");
+}
+
+.permit-step:nth-child(2) {
+  background-image: url("../utilities/entryPermit/step2.jpg");
+}
+
+.permit-step:nth-child(3) {
+  background-image: url("../utilities/entryPermit/step3.jpg");
+}
+
+.permit-step:nth-child(4) {
+  background-image: url("../utilities/entryPermit/step4.jpg");
+}
+
+/* Dark gradient overlay */
+.permit-step::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom right,
+    rgba(0, 0, 0, 0.35),
+    rgba(0, 0, 0, 0.55)
+  );
+  z-index: 1;
+}
+
+/* ============================================================
+   STEP CONTENT (TEXT)
+============================================================ */
+.permit-step > div {
+  position: relative;
+  z-index: 2;
 }
 
 .permit-step h3 {
-  font-size: 18px;
-  margin-bottom: 6px;
+  font-size: 32px;
+  font-weight: 600;
+  margin-bottom: 10px;
 }
 
-/* / CTA / */
+.permit-step p {
+  font-size: 18px;
+  line-height: 1.7;
+  max-width: 480px;
+  color: #e6e6e6;
+}
+
+/* ============================================================
+   BIG BACKGROUND NUMBER (Bahamas-style)
+============================================================ */
+.step-no {
+  position: absolute;
+  top: 30px;
+  right: 40px;
+
+  font-size: 140px;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.18);
+  z-index: 1;
+}
+
+/* ============================================================
+   CTA SECTION
+============================================================ */
 .permit-cta {
   text-align: center;
 }
@@ -97,155 +191,19 @@ body {
   background: #095c6b;
 }
 
-/* NOTE */
-.permit-note {
-  background: #fff3cd;
-  border-left: 4px solid #ffcc00;
-  padding: 14px 18px;
-  border-radius: 8px;
-  font-size: 14px;
-}
-
-/* RESPONSIVE */
-@media (max-width: 700px) {
-  .permit-hero h1 {
-    font-size: 36px;
-  }
-
-  .permit-section h2 {
-    font-size: 26px;
-  }
-
-}
-
-/* GLOBAL FONT FOR THIS PAGE */
-body {
-  font-family: "Cormorant Garamond", serif;
-  color: #10212b;
-  background: #f7f9fb;
-}
-
-/* HERO – use background image with gradient overlay */
-/* HERO – full image, bigger, no blue tint, text at bottom */
-.permit-hero {
-  position: relative;
-  min-height: 45vh;
-  /* makes the picture big like screenshot */
-  display: flex;
-  align-items: flex-end;
-  /* moves text to the bottom */
-  justify-content: center;
-  padding: 0 20px 80px;
-  /* bottom space under text */
-  text-align: center;
-  color: #fff;
-
-  background:
-    url("../utilities/pictures/entry-permit_bg.jpg") center center / cover no-repeat;
-  /* your image, NO blue tint */
-}
-
-/* remove your old gradient overlay completely */
-
-.permit-hero h1 {
-  font-size: 56px;
-  font-weight: 700;
-  margin-bottom: 18px;
-}
-
-.permit-hero p {
-  max-width: 640px;
-  margin: 0 auto;
-  font-size: 20px;
-  line-height: 1.7;
-}
-
-/* CONTAINER / SECTION TITLES */
-.permit-container {
-  max-width: 1000px;
-  margin: 60px auto 80px;
-  padding: 0 20px;
-}
-
-.permit-section h2 {
-  font-size: 34px;
-  margin-bottom: 28px;
-}
-
-/* STEPS – cards */
-.permit-steps {
-  display: grid;
-  gap: 24px;
-}
-
-/* base card look */
-.permit-step {
-  display: flex;
-  gap: 18px;
-  background: #ffffff;
-  transition:
-    opacity 0.6s ease,
-    transform 0.6s ease;
-  padding: 24px 26px;
-  border-radius: 18px;
-  box-shadow: 0 18px 50px rgba(0, 0, 0, 0.08);
-
-  /* animation base state */
+/* ============================================================
+   SCROLL ANIMATION
+============================================================ */
+.scroll-animate {
   opacity: 0;
-  transform: translateY(25px);
-  transition: opacity 0.6s ease, transform 0.6s ease;
+  transform: translateY(40px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
 }
 
-/* when JS adds this, card “drops in” */
-.permit-step.visible {
+.scroll-animate.show {
   opacity: 1;
   transform: translateY(0);
 }
-
-.step-no {
-  font-size: 26px;
-  font-weight: 700;
-  color: #0b7285;
-  min-width: 32px;
-}
-
-.permit-step h3 {
-  font-size: 22px;
-  margin-bottom: 6px;
-}
-
-.permit-step p {
-  font-size: 18px;
-  line-height: 1.7;
-  color: #425563;
-}
-
-/* Responsive tweaks */
-@media (max-width: 768px) {
-  .permit-hero h1 {
-    font-size: 40px;
-  }
-
-  .permit-hero p {
-    font-size: 18px;
-  }
-
-  .permit-step {
-    padding: 18px 18px;
-  }
-
-  .permit-step h3 {
-    font-size: 20px;
-  }
-
-  .permit-step p {
-    font-size: 16px;
-  }
-}
-
-/* =============================== */
-/* ANIMATIONS */
-/* =============================== */
 
 /* hero load animation */
 .animate-fade-up {
@@ -261,14 +219,36 @@ body {
   }
 }
 
-/* scroll animations */
-.scroll-animate {
-  opacity: 0;
-  transform: translateY(40px);
-  transition: opacity 0.7s ease, transform 0.7s ease;
+/* ============================================================
+   RESPONSIVE
+============================================================ */
+@media (max-width: 900px) {
+  .permit-step {
+    height: 320px;
+    padding: 30px 30px;
+  }
+
+  .permit-step h3 {
+    font-size: 26px;
+  }
+
+  .step-no {
+    font-size: 100px;
+    right: 20px;
+  }
 }
 
-.scroll-animate.show {
-  opacity: 1;
-  transform: translateY(0);
+@media (max-width: 600px) {
+  .permit-step {
+    height: 300px;
+    padding: 24px 22px;
+  }
+
+  .permit-step h3 {
+    font-size: 22px;
+  }
+
+  .step-no {
+    font-size: 70px;
+  }
 }
