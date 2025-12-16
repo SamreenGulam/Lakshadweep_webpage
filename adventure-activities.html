@@ -1,94 +1,116 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>Adventure Activities | Lakshadweep</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../css/experience-detail.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adventure Activities | Lakshadweep</title>
+
+    <!-- FONTS -->
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+
+    <!-- ICONS + BOOTSTRAP -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+
+    <!-- GLOBAL + PAGE CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/experience-detail.css">
 </head>
+
 <body>
 
-<header class="exp-hero exp-hero-adventure">
-  <div class="exp-hero-inner">
-    <p class="exp-tag">Experiences</p>
-    <h1>Adventure Activities</h1>
-    <p class="exp-hero-text">
-      Parasailing, kayaking and other active ways to experience the lagoons and sea breeze.
-    </p>
-  </div>
+<!-- ░░░ DARK NAVBAR (same as other experience pages) ░░░ -->
+<nav class="navbar navbar-expand-lg fixed-top main-navbar">
+    <a class="navbar-brand fw-semibold d-flex flex-column" href="index.html">
+        <span class="brand-title">Lakshadweep</span>
+        <span class="brandsubhead">Official‑style travel inspiration</span>
+    </a>
+
+    <button class="navbar-toggler" type="button" id="mobileMenuToggle">
+        <i class="bi bi-list" style="font-size:32px;color:white;"></i>
+    </button>
+
+    <div class="collapse navbar-collapse" id="mainNav">
+        <ul class="navbar-nav ms-auto">
+            <li class="nav-item"><a class="nav-link" href="index.html#islands">Islands</a></li>
+            <li class="nav-item"><a class="nav-link" href="water-activities.html">Water Activities</a></li>
+          
+            <li class="nav-item"><a class="nav-link" href="entry-permit.html">Entry Permit</a></li>
+        </ul>
+    </div>
+</nav>
+
+<!-- ░░░ HERO ░░░ -->
+<header class="wa-hero">
+    <div class="wa-hero-overlay"></div>
+
+    <div class="wa-hero-content">
+        <h1>Adventure Activities</h1>
+        <p>Experience Lakshadweep from the sky, the shore, and the wild — thrilling adventures for every explorer.</p>
+    </div>
+
+    <!-- Replace image -->
+    <img class="wa-hero-video" src="utilities/pictures/adventure/hero_adventure.jpg" alt="">
 </header>
 
-<main class="exp-main">
+<!-- ░░░ MAIN CONTENT ░░░ -->
+<main>
 
-  <section class="exp-section">
-    <div class="exp-section-inner">
-      <h2>For the Adventurous</h2>
-      <p>
-        Some islands offer additional adventure activities such as parasailing
-        above the lagoon, kayaking through calm waters and other guided
-        adrenaline experiences.
-      </p>
-      <p>
-        These activities are usually operated by licensed providers with
-        safety checks, equipment and instructors on site.
-      </p>
-    </div>
-  </section>
+    <!-- ░░ 1 — Paragliding ░░ -->
+    <section class="wa-section">
+        <div class="wa-block">
+            <div class="wa-img" style="background-image:url('utilities/pictures/adventure/paragliding.jpg');"></div>
 
-  <section class="exp-section exp-media">
-    <div class="exp-section-inner">
-      <h2>Action from Above & On the Water</h2>
-      <p>Feature a video of parasailing launches, kayaking or other high‑energy moments.</p>
-      <div class="exp-video-wrap">
-        <video controls class="exp-video">
-          <source src="../videos/adventure-main.mp4" type="video/mp4">
-        </video>
-      </div>
-    </div>
-  </section>
+            <div class="wa-text">
+                <div class="wa-number">1</div>
+                <h2>Paragliding</h2>
+                <p>Soar above turquoise lagoons and white-sand beaches as warm island winds lift you into Lakshadweep’s open sky. One of the most breathtaking aerial experiences in India.</p>
+            </div>
+        </div>
+    </section>
 
-  <section class="exp-section">
-    <div class="exp-section-inner">
-      <h2>Highlights</h2>
-      <div class="exp-gallery">
-        <div class="exp-photo exp-photo-adventure-1"></div>
-        <div class="exp-photo exp-photo-adventure-2"></div>
-        <div class="exp-photo exp-photo-adventure-3"></div>
-      </div>
-      <ul class="exp-bullets">
-        <li>Parasailing with wide aerial views of lagoons and reefs.</li>
-        <li>Kayaking in calm sections of the lagoon or along the shoreline.</li>
-        <li>Option to combine water sports in half‑day packages.</li>
-        <li>Guided sessions with safety gear and pre‑activity briefing.</li>
-      </ul>
-    </div>
-  </section>
+    <!-- ░░ 2 — Kayaking ░░ -->
+    <section class="wa-section alt">
+        <div class="wa-block">
+            <div class="wa-img" style="background-image:url('utilities/pictures/adventure/kayaking.jpg');"></div>
 
-  <section class="exp-section exp-faq">
-    <div class="exp-section-inner">
-      <h2>Good to Know</h2>
-      <div class="exp-faq-grid">
-        <div>
-          <h3>Fitness</h3>
-          <p>Basic fitness and comfort in water/height may be required for certain activities.</p>
+            <div class="wa-text">
+                <div class="wa-number">2</div>
+                <h2>Kayaking</h2>
+                <p>Glide peacefully through calm lagoons, mangroves, and reef edges. Perfect for beginners and nature lovers seeking quiet exploration.</p>
+            </div>
         </div>
-        <div>
-          <h3>Weather</h3>
-          <p>Parasailing and similar activities depend heavily on wind and sea conditions.</p>
+    </section>
+
+    <!-- ░░ 3 — Lagoon Trekking ░░ -->
+    <section class="wa-section">
+        <div class="wa-block">
+            <div class="wa-img" style="background-image:url('utilities/pictures/adventure/trekking.jpg');"></div>
+
+            <div class="wa-text">
+                <div class="wa-number">3</div>
+                <h2>Lagoon & Island Trekking</h2>
+                <p>Walk across shallow lagoon beds, explore untouched nature trails, and witness serene sunrise points surrounded by tropical wildlife.</p>
+            </div>
         </div>
-        <div>
-          <h3>Age Limits</h3>
-          <p>Operators may specify age and weight limits for safety reasons.</p>
+    </section>
+
+    <!-- ░░ 4 — Windsurfing ░░ -->
+    <section class="wa-section alt">
+        <div class="wa-block">
+            <div class="wa-img" style="background-image:url('utilities/pictures/adventure/windsurfing.jpg');"></div>
+
+            <div class="wa-text">
+                <div class="wa-number">4</div>
+                <h2>Windsurfing</h2>
+                <p>Harness the strong coastal winds and glide across blue lagoons. Ideal for thrill-seekers and intermediate adventurers craving speed.</p>
+            </div>
         </div>
-        <div>
-          <h3>Advance Booking</h3>
-          <p>Slots can be limited; pre‑book during peak season.</p>
-        </div>
-      </div>
-    </div>
-  </section>
+    </section>
 
 </main>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

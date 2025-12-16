@@ -1,95 +1,124 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>Water Activities | Lakshadweep</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/experience-detail.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Water Activities | Lakshadweep</title>
+
+    <!-- FONTS -->
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- ICONS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+
+    <!-- BOOTSTRAP -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+
+    <!-- YOUR CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/experience-detail.css">
 </head>
+
 <body>
 
-<header class="exp-hero exp-hero-water">
-  <div class="exp-hero-inner">
-    <p class="exp-tag">Experiences</p>
-    <h1>Water Activities</h1>
-    <p class="exp-hero-text">
-      Scuba diving, surfing, deep diving and calm‑water fishing across turquoise lagoons and coral reefs.
-    </p>
-  </div>
+<!-- ░░░ NAVBAR ░░░ -->
+<nav class="navbar navbar-expand-lg fixed-top main-navbar">
+    <a class="navbar-brand fw-semibold d-flex flex-column" href="index.html">
+        <span class="brand-title">Lakshadweep</span>
+        <span class="brandsubhead">Official‑style travel inspiration</span>
+    </a>
+
+    <button class="navbar-toggler" type="button" id="mobileMenuToggle">
+        <i class="bi bi-list" style="font-size:32px;color:white;"></i>
+    </button>
+
+    <div class="collapse navbar-collapse" id="mainNav">
+        <ul class="navbar-nav ms-auto">
+            <li class="nav-item"><a class="nav-link" href="index.html#islands">Islands</a></li>
+            <li class="nav-item"><a class="nav-link" href="index.html#travel-info">Travel Info</a></li>
+            <li class="nav-item"><a class="nav-link" href="entry-permit.html">Entry Permit</a></li>
+        </ul>
+    </div>
+</nav>
+
+<!-- ░░░ HERO ░░░ -->
+<header class="wa-hero">
+    <div class="wa-hero-overlay"></div>
+
+    <div class="wa-hero-content">
+        <h1>Water Activities</h1>
+        <p>Experience the underwater magic of Lakshadweep — from coral reefs to thrilling water adventures.</p>
+    </div>
+
+    <!-- 🎥 ADD YOUR HERO VIDEO HERE -->
+    <video autoplay muted loop playsinline class="wa-hero-video">
+        <source src="utilities/pictures/water_activities/spinner.mp4" type="video/mp4">
+    </video>
 </header>
 
-<main class="exp-main">
 
-  <section class="exp-section">
-    <div class="exp-section-inner">
-      <h2>What It Feels Like</h2>
-      <p>
-        Lakshadweep’s lagoons are shallow and protected by reefs, which makes
-        them perfect for first‑time swimmers as well as certified divers.
-        From gentle snorkelling to deep‑water dives, every activity is centred
-        around clear water and colourful marine life.
-      </p>
-      <p>
-        Instructors and boat crews are usually local experts who understand
-        the sea, tides and safety requirements in detail.
-      </p>
-    </div>
-  </section>
+<!-- ░░░ MAIN CONTENT ░░░ -->
+<main>
 
-  <section class="exp-section exp-media">
-    <div class="exp-section-inner">
-      <h2>Watch the Water</h2>
-      <p>Use this space to showcase a short edit of scuba, surfing or reef dives.</p>
-      <div class="exp-video-wrap">
-        <video controls class="exp-video">
-          <source src="../videos/water-main.mp4" type="video/mp4">
-        </video>
-      </div>
-    </div>
-  </section>
+<!-- 1 — Scuba Diving -->
+<section class="wa-section">
+    <div class="wa-block">
+        <div class="wa-img" style="background-image:url('utilities/pictures/water_activities/MDP_0630.jpg');"></div>
 
-  <section class="exp-section">
-    <div class="exp-section-inner">
-      <h2>Highlights</h2>
-      <div class="exp-gallery">
-        <div class="exp-photo exp-photo-water-1"></div>
-        <div class="exp-photo exp-photo-water-2"></div>
-        <div class="exp-photo exp-photo-water-3"></div>
-      </div>
-      <ul class="exp-bullets">
-        <li>Introductory and deep scuba diving with certified instructors.</li>
-        <li>Surfing small, clean waves in selected island spots.</li>
-        <li>Lagoon snorkelling over coral gardens and reef fish.</li>
-        <li>Traditional boat‑based fishing trips at sunrise or sunset.</li>
-      </ul>
-    </div>
-  </section>
+        <div class="wa-text">
+            <div class="wa-number">1</div>
+            <h2>Scuba Diving</h2>
+            <p>Explore India’s clearest waters where coral gardens, sea turtles, and vibrant fish thrive untouched.</p>
 
-  <section class="exp-section exp-faq">
-    <div class="exp-section-inner">
-      <h2>Good to Know</h2>
-      <div class="exp-faq-grid">
-        <div>
-          <h3>Best Season</h3>
-          <p>Usually October – March, depending on local weather and sea conditions.</p>
+            <!-- 🎥 INLINE VIDEO -->
+            <video class="wa-inline-video" controls>
+                <source src="utilities/pictures/water_activities/GX010474.MP4" type="video/mp4">
+            </video>
         </div>
-        <div>
-          <h3>Safety</h3>
-          <p>Always follow the instructions of certified guides and use the safety gear provided.</p>
-        </div>
-        <div>
-          <h3>For Beginners</h3>
-          <p>Calm lagoons are ideal for people who are new to the ocean or not strong swimmers.</p>
-        </div>
-        <div>
-          <h3>Booking</h3>
-          <p>Plan through your resort or authorised tour operator in advance.</p>
-        </div>
-      </div>
     </div>
-  </section>
+</section>
+
+<!-- 2 — Surfing & Jet Skiing -->
+<section class="wa-section alt">
+    <div class="wa-block">
+        <div class="wa-img" style="background-image:url('utilities/pictures/water_activities/sony 014.jpg');"></div>
+
+        <div class="wa-text">
+            <div class="wa-number">2</div>
+            <h2>Surfing & Jet Skiing</h2>
+            <p>Ride turquoise swells and glide across calm lagoons — perfect for both beginners and thrill‑seekers.</p>
+        </div>
+    </div>
+</section>
+
+<!-- 3 — Deep Sea Diving -->
+<section class="wa-section">
+    <div class="wa-block">
+        <div class="wa-img" style="background-image:url('utilities/pictures/water_activities/MDP_0159a.jpg');"></div>
+
+        <div class="wa-text">
+            <div class="wa-number">3</div>
+            <h2>Deep Sea Diving</h2>
+            <p>Discover underwater caves, dramatic drop‑offs, and rare marine life in Lakshadweep’s untouched dive zones.</p>
+        </div>
+    </div>
+</section>
+
+<!-- 4 — Fishing -->
+<section class="wa-section alt">
+    <div class="wa-block">
+        <div class="wa-img" style="background-image:url('utilities/pictures/water_activities/fishing.webp');"></div>
+
+        <div class="wa-text">
+            <div class="wa-number">4</div>
+            <h2>Lagoon & Deep‑Sea Fishing</h2>
+            <p>Try traditional pole‑and‑line fishing or cast into deeper waters for tuna, barracuda, and more.</p>
+        </div>
+    </div>
+</section>
 
 </main>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

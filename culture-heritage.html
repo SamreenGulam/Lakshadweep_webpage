@@ -1,95 +1,136 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>Culture, Arts & Mosques | Lakshadweep</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../css/experience-detail.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Culture, Arts & Mosques | Lakshadweep</title>
+
+    <!-- FONTS -->
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+
+    <!-- ICONS & BOOTSTRAP -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+
+    <!-- GLOBAL + PAGE CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/experience-detail.css">
 </head>
+
 <body>
 
-<header class="exp-hero exp-hero-culture">
-  <div class="exp-hero-inner">
-    <p class="exp-tag">Experiences</p>
-    <h1>Culture, Arts & Mosques</h1>
-    <p class="exp-hero-text">
-      Discover island mosques, everyday life, markets and local ornaments shaped by the sea.
-    </p>
-  </div>
+<!-- =============================== -->
+<!-- NAVBAR (dark version for detail pages) -->
+<!-- =============================== -->
+<nav class="navbar navbar-expand-lg fixed-top main-navbar">
+    <a class="navbar-brand fw-semibold d-flex flex-column" href="index.html">
+        <span class="brand-title">Lakshadweep</span>
+        <span class="brandsubhead">Official‑style travel inspiration</span>
+    </a>
+
+    <button class="navbar-toggler" id="mobileMenuToggle">
+        <i class="bi bi-list" style="font-size:32px;color:white;"></i>
+    </button>
+
+    <div class="collapse navbar-collapse" id="mainNav">
+        <ul class="navbar-nav ms-auto">
+            <li class="nav-item"><a class="nav-link" href="index.html#islands">Islands</a></li>
+            <li class="nav-item"><a class="nav-link" href="index.html#travel-info">Travel Info</a></li>
+            <li class="nav-item"><a class="nav-link" href="index.html#toDo">Experiences</a></li>
+        </ul>
+    </div>
+</nav>
+
+<!-- =============================== -->
+<!-- HERO -->
+<!-- =============================== -->
+<header class="wa-hero">
+    <div class="wa-hero-overlay"></div>
+
+    <div class="wa-hero-content">
+        <h1>Culture, Arts & Mosques</h1>
+        <p>Discover the heritage, craftsmanship, architecture, and soulful traditions of Lakshadweep.</p>
+    </div>
+
+    <!-- PLACE YOUR VIDEO HERE -->
+    <video autoplay muted loop playsinline class="wa-hero-video">
+        <source src="" type="video/mp4"> <!-- Add culture/heritage video -->
+    </video>
 </header>
 
-<main class="exp-main">
+<!-- =============================== -->
+<!-- MAIN CONTENT SECTIONS -->
+<!-- =============================== -->
 
-  <section class="exp-section">
-    <div class="exp-section-inner">
-      <h2>Life on the Islands</h2>
-      <p>
-        Beyond the beaches, Lakshadweep is a close‑knit island community with
-        its own traditions, architecture and rhythm of life. Mosques, fishing
-        boats, coconut groves and narrow streets define the landscape.
-      </p>
-      <p>
-        Visitors are welcome to observe respectfully, interact with local
-        artisans and experience markets where jewellery, ornaments and
-        everyday goods are sold.
-      </p>
-    </div>
-  </section>
+<main>
 
-  <section class="exp-section exp-media">
-    <div class="exp-section-inner">
-      <h2>Glimpses of Culture</h2>
-      <p>Show a short video of prayers, markets, crafts or daily island life.</p>
-      <div class="exp-video-wrap">
-        <video controls class="exp-video">
-          <source src="../videos/culture-main.mp4" type="video/mp4">
-        </video>
-      </div>
-    </div>
-  </section>
+    <!-- ░░ SECTION 1 — Traditional Arts & Crafts ░░ -->
+    <section class="wa-section">
+        <div class="wa-block exp-block">
+            <div class="exp-img" style="background-image:url('');"></div>
+            <div class="exp-text">
+                <div class="exp-num">1</div>
+                <h2>Traditional Arts & Crafts</h2>
+                <p>
+                    Lakshadweep is known for its handwoven coconut leaf products, coir crafts,
+                    traditional jewellery, and ornate household artifacts crafted lovingly by island artisans.
+                </p>
+            </div>
+        </div>
+    </section>
 
-  <section class="exp-section">
-    <div class="exp-section-inner">
-      <h2>Highlights</h2>
-      <div class="exp-gallery">
-        <div class="exp-photo exp-photo-culture-1"></div>
-        <div class="exp-photo exp-photo-culture-2"></div>
-        <div class="exp-photo exp-photo-culture-3"></div>
-      </div>
-      <ul class="exp-bullets">
-        <li>Historic and contemporary mosques with distinct island architecture.</li>
-        <li>Shopping for local ornaments, handicrafts and souvenirs.</li>
-        <li>Experiencing local food, music and cultural evenings where available.</li>
-        <li>Guided walks through villages and waterfront neighbourhoods.</li>
-      </ul>
-    </div>
-  </section>
+    <!-- ░░ SECTION 2 — Local Markets & Shopping ░░ -->
+    <section class="wa-section alt">
+        <div class="wa-block exp-block">
+            <div class="exp-img" style="background-image:url('');"></div>
+            <div class="exp-text">
+                <div class="exp-num">2</div>
+                <h2>Local Markets & Shopping</h2>
+                <p>
+                    Explore lively markets offering handmade souvenirs, cultural ornaments,
+                    lacquer work, seashell jewelry and unique island delicacies.
+                </p>
+            </div>
+        </div>
+    </section>
 
-  <section class="exp-section exp-faq">
-    <div class="exp-section-inner">
-      <h2>Good to Know</h2>
-      <div class="exp-faq-grid">
-        <div>
-          <h3>Dress Code</h3>
-          <p>Wear modest clothing, especially when visiting mosques and villages.</p>
+    <!-- ░░ SECTION 3 — Mosques & Islamic Heritage ░░ -->
+    <section class="wa-section">
+        <div class="wa-block exp-block">
+            <div class="exp-img" style="background-image:url('');"></div>
+            <div class="exp-text">
+                <div class="exp-num">3</div>
+                <h2>Historic Mosques</h2>
+                <p>
+                    Visit century‑old mosques known for their coral‑stone architecture, 
+                    intricate wood carvings, and peaceful ambience — reflecting the deep cultural identity of the islands.
+                </p>
+            </div>
         </div>
-        <div>
-          <h3>Photography</h3>
-          <p>Always ask before photographing people or prayer spaces.</p>
+    </section>
+
+    <!-- ░░ SECTION 4 — Cultural Performances & Traditions ░░ -->
+    <section class="wa-section alt">
+        <div class="wa-block exp-block">
+            <div class="exp-img" style="background-image:url('');"></div>
+            <div class="exp-text">
+                <div class="exp-num">4</div>
+                <h2>Performances & Island Traditions</h2>
+                <p>
+                    Experience folk dances, rhythmic drumming, festive rituals and age‑old ceremonies that bring Lakshadweep’s stories to life.
+                </p>
+
+                <!-- OPTIONAL CULTURE VIDEO -->
+                <video class="activity-video" controls>
+                    <source src="" type="video/mp4">
+                </video>
+            </div>
         </div>
-        <div>
-          <h3>Shopping</h3>
-          <p>Look for locally made ornaments and crafts that support island communities.</p>
-        </div>
-        <div>
-          <h3>Guides</h3>
-          <p>Local guides can explain history, customs and stories behind each place.</p>
-        </div>
-      </div>
-    </div>
-  </section>
+    </section>
 
 </main>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
