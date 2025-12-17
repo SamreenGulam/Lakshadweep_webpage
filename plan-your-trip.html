@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plan Your Trip | Lakshadweep</title>
+
+    <!-- Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+
+    <!-- Icons + Bootstrap -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+
+    <!-- Global Styles -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- Page CSS -->
+    <link rel="stylesheet" href="css/plan-your-trip.css">
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg fixed-top main-navbar">
+        <a class="navbar-brand fw-semibold d-flex flex-column" href="index.html">
+            <span class="brand-title">Lakshadweep</span>
+            <span class="brandsubhead">Official‑style travel inspiration</span>
+        </a>
+        <button class="navbar-toggler" type="button" id="mobileMenuToggle">
+            <i class="bi bi-list" style="font-size:32px;color:white;"></i>
+        </button>
+
+        <div class="collapse navbar-collapse" id="mainNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link" href="index.html#islands">Islands</a></li>
+                <li class="nav-item"><a class="nav-link active" href="index.html#travel-info">Travel Info</a></li>
+                <li class="nav-item"><a class="nav-link" href="entry-permit.html">Entry Permit</a></li>
+                <li class="nav-item"><a class="nav-link" href="index.html#toDo">Experiences</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <header class="plantrip-hero">
+        <div class="plantrip-hero-content">
+            <h1>Plan Your Trip</h1>
+            <p>Whether you’re dreaming of turquoise lagoons, coral dives, cultural walks, or peaceful island stays, this
+                guide helps you shape a trip that feels effortless and meaningful. Explore essential travel steps, stay
+                options, and local experiences that bring Lakshadweep’s charm to life.
+
+            </p>
+        </div>
+    </header>
+
+    <!-- TABS -->
+    <div class="pyt-tabs">
+        <button class="pyt-tab active" data-tab="overview">Overview</button>
+        <button class="pyt-tab" data-tab="packages">Tour packages</button>
+        <button class="pyt-tab" data-tab="guides">Ambassadors / local guides</button>
+        <button class="pyt-tab" data-tab="agents">Travel agents</button>
+    </div>
+
+    <!-- TAB CONTENT -->
+    <div class="pyt-content">
+
+        <!-- OVERVIEW TAB -->
+        <div class="pyt-panel active" id="overview">
+
+            <h2>Trip planning essentials</h2>
+
+            <div class="pyt-card-row">
+
+                <div class="pyt-card" data-step="1">
+                    <h3>1. Check eligibility & permits</h3>
+                    <p>Confirm who’s travelling, gather documents, and initiate the permit application in advance.</p>
+                    <p class="sub">Linked with the Entry Permit section and official portal.</p>
+                </div>
+
+                <div class="pyt-card" data-step="1">
+                    <h3>2. Align travel & stay</h3>
+                    <p>Match ship or flight bookings with resorts/guesthouses and inter‑island connections.</p>
+                    <p class="sub">Coordinate with seasonal schedules and island availability.</p>
+                </div>
+
+                <div class="pyt-card" data-step="1">
+                    <h3>3. Travel responsibly</h3>
+                    <p>Protect coral reefs, respect local customs and follow all safety guidelines.</p>
+                    <p class="sub">Focus on low‑impact, eco‑aware travel across fragile atolls.</p>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- PACKAGES TAB -->
+        <div class="pyt-panel" id="packages">
+
+            <h2>Suggested tour packages</h2>
+
+            <div class="pyt-card-row">
+
+                <!-- SAMPLE PACKAGE 1 -->
+                <div class="pyt-card">
+                    <h3>3‑day escape</h3>
+                    <p>Ideal for a quick break focused on one or two nearby islands.</p>
+                    <p class="sub">Example: Kochi → Agatti → Bangaram → Kochi</p>
+
+                    <!-- OFFICIAL TOURISM NOTE -->
+                    <p class="sub official-note">
+                        In the official tourism portal, this package will open a detailed page with:
+                        <br>✔ Day‑wise itinerary
+                        <br>✔ Inclusions & exclusions
+                        <br>✔ UT‑approved pricing
+                        <br>✔ Verified operators offering this package
+                    </p>
+
+                    <!-- SAMPLE BUTTON FOR FUTURE LINK -->
+                    <a class="package-btn" href="#" onclick="alert('This will open the official itinerary page soon!')">
+                        View Details
+                    </a>
+                </div>
+
+                <!-- SAMPLE PACKAGE 2 -->
+                <div class="pyt-card">
+                    <h3>4–5 day island circuit</h3>
+                    <p>Combine 2–3 islands with beaches, local culture and reefs.</p>
+                    <p class="sub">Example: Agatti · Bangaram · Thinnakara · Kavaratti · Minicoy</p>
+
+                    <p class="sub official-note">
+                        This will include operator availability, seasonal schedules, and UT‑verified rates.
+                    </p>
+
+                    <a class="package-btn" href="#" onclick="alert('Coming soon: full itinerary + pricing!')">
+                        View Details
+                    </a>
+                </div>
+
+                <!-- SAMPLE PACKAGE 3 -->
+                <div class="pyt-card">
+                    <h3>7‑day immersive stay</h3>
+                    <p>Slow travel with extra days for diving, fishing, community visits.</p>
+                    <p class="sub">Ideal for photographers, divers and eco‑travel groups.</p>
+
+                    <p class="sub official-note">
+                        In the official version, this links to curated packages with safety guidelines & pricing tiers.
+                    </p>
+
+                    <a class="package-btn" href="#" onclick="alert('Itinerary page will be added after approval.')">
+                        View Details
+                    </a>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- GUIDES TAB -->
+        <div class="pyt-panel" id="guides">
+
+            <h2>Island ambassadors & local guides</h2>
+
+            <div class="pyt-card blue">
+                <h3>Why choose a local guide?</h3>
+                <p>Local guides help you understand customs, choose respectful photo spots, and discover
+                    lesser-known experiences like traditional fishing or folk art.</p>
+            </div>
+
+            <div class="pyt-two-col">
+                <ul>
+                    <li><strong>Certified nature guides</strong> – reefs, birdlife, ecology.</li>
+                    <li><strong>Cultural ambassadors</strong> – stories, mosques, festivals.</li>
+                </ul>
+
+                <ul>
+                    <li><strong>Activity hosts</strong> – snorkelling, kayaking, village walks.</li>
+                    <li><strong>Local experts</strong> – crafts, folk art, traditions.</li>
+                </ul>
+            </div>
+
+        </div>
+
+        <!-- AGENTS TAB -->
+        <div class="pyt-panel" id="agents">
+
+            <h2>Registered travel agents</h2>
+
+            <p>End‑to‑end bookings (permit + ship/flight + stays + activities) are handled by approved travel
+                agents or tour operators.</p>
+
+            <p>The official portal will maintain a directory of verified partners with filters for city,
+                specialisation and package type.</p>
+
+            <div class="pyt-card blue">
+                <h3>Sample directory layout</h3>
+
+                <p><strong>Ocean Trails Holidays</strong> – Kochi · Island circuits</p>
+                <p><strong>Coral Reef Journeys</strong> – Pan‑India · Diving & eco‑travel</p>
+                <p><strong>Island Breeze Travels</strong> – Mumbai · Family & honeymoon trips</p>
+
+                <p class="sub">Replace with UT‑approved agents after verification.</p>
+            </div>
+
+        </div>
+
+
+    </div>
+
+    <script>
+        /* TAB SWITCH LOGIC */
+        const tabs = document.querySelectorAll(".pyt-tab");
+        const panels = document.querySelectorAll(".pyt-panel");
+
+        tabs.forEach(tab => {
+            tab.addEventListener("click", () => {
+
+                tabs.forEach(t => t.classList.remove("active"));
+                tab.classList.add("active");
+
+                panels.forEach(panel => panel.classList.remove("active"));
+                document.getElementById(tab.dataset.tab).classList.add("active");
+            });
+        });
+    </script>
+
+</body>
+
+</html>

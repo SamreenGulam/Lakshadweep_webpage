@@ -26,10 +26,21 @@
   <nav class="navbar navbar-expand-lg fixed-top main-navbar">
 
     <!-- Brand -->
-    <a class="navbar-brand fw-semibold d-flex flex-column" href="#">
-      <span class="brand-title">Lakshadweep</span>
-      <span class="brandsubhead">Official‑style travel inspiration</span>
+    <a class="navbar-brand fw-semibold d-flex align-items-center gap-2" href="index.html">
+
+      <!-- LOGO IMAGE -->
+      <img src="utilities/pictures/logo-removebg-preview.png" alt="Lakshadweep Logo" class="nav-logo">
+
+      <!-- TEXT PART -->
+      <div class="d-flex flex-column">
+        <span class="brand-title">Lakshadweep</span>
+        <span class="brandsubhead">Official‑style travel inspiration</span>
+      </div>
+
     </a>
+
+    <a href="plan-your-trip.html" class="nav-trip-btn">Plan Your Trip</a>
+
 
     <!-- Mobile Hamburger -->
     <button class="navbar-toggler" type="button" id="mobileMenuToggle">
@@ -133,6 +144,7 @@
       <button class="search-icon"><i class="bi bi-search"></i></button>
     </div>
 
+
   </nav>
 
   <!-- SEARCH OVERLAY BACKDROP -->
@@ -185,7 +197,8 @@
     <div class="hero-content">
       <h1>Discover<br>Lakshadweep</h1>
       <p>Experience the beauty of India's tropical paradise</p>
-      <button class="trip-btn primary-trip-btn">Plan Your Trip</button>
+      <button class="trip-btn primary-trip-btn" onclick="window.location.href='plan-your-trip.html'">Plan Your
+        Trip</button>
     </div>
   </header>
   <!-- =============================== -->
@@ -628,6 +641,17 @@
     <script src="JS/script.js"></script>
     <script src="https://unpkg.com/scrollreveal"></script>
     <script src="js/scrollAnimation.js"></script>
+    <script>
+      window.addEventListener("scroll", () => {
+        const btn = document.querySelector(".nav-trip-btn");
+        if (window.scrollY > 200) {
+          btn.classList.add("show");
+        } else {
+          btn.classList.remove("show");
+        }
+      });
+    </script>
+
 </body>
 
 </html>
