@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beach Exploring | Lakshadweep</title>
+
+    <!-- FONTS -->
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+
+    <!-- ICONS + BOOTSTRAP -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+
+    <!-- PAGE CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/experience-detail.css">
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg fixed-top main-navbar">
+    <a class="navbar-brand fw-semibold d-flex flex-column" href="index.html">
+        <span class="brand-title">Lakshadweep</span>
+        <span class="brandsubhead">Official‑style travel inspiration</span>
+    </a>
+    <button class="navbar-toggler" type="button" id="mobileMenuToggle">
+        <i class="bi bi-list" style="font-size:32px;color:white;"></i>
+    </button>
+
+    <div class="collapse navbar-collapse" id="mainNav">
+        <ul class="navbar-nav ms-auto">
+            <li class="nav-item"><a class="nav-link" href="index.html#islands">Islands</a></li>
+            <li class="nav-item"><a class="nav-link" href="index.html#travel-info">Travel Info</a></li>
+            <li class="nav-item"><a class="nav-link" href="entry-permit.html">Entry Permit</a></li>
+        </ul>
+    </div>
+</nav>
+
+<!-- HERO -->
+<header class="be-hero">
+    <div class="be-overlay"></div>
+    <div class="be-hero-content">
+        <h1>Beach Exploring</h1>
+        <p>Walk pristine shores, climb historic lighthouses, and witness Lakshadweep’s untouched viewpoints.</p>
+    </div>
+        <video autoplay muted loop playsinline class="wa-hero-video">
+        <source src="utilities/pictures/beachexp/IMG_4639.MP4" type="video/mp4">
+    </video>
+</header>
+
+<main>
+
+    <!-- SECTION 1 — LIGHTHOUSE -->
+    <section class="be-section">
+        <div class="be-block">
+
+            <!-- IMAGE SLIDESHOW -->
+            <div class="be-img-slider">
+                <div class="slides">
+                    <img src="ADD-IMG-1" class="slide active">
+                    <img src="ADD-IMG-2" class="slide">
+                    <img src="ADD-IMG-3" class="slide">
+                </div>
+
+                <button class="slider-btn prev" onclick="moveSlide(-1)">❮</button>
+                <button class="slider-btn next" onclick="moveSlide(1)">❯</button>
+            </div>
+
+            <!-- TEXT -->
+            <div class="be-text">
+                <div class="be-number">1</div>
+                <h2>Life at Beach</h2>
+                <p>
+                    Experience panoramic views from Lakshadweep’s iconic lighthouses.
+                    Enjoy calm ocean horizons, sunset colours, and winds sweeping across the turquoise water.
+                </p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- SECTION 2 — VIEWPOINTS -->
+    <section class="be-section alt">
+        <div class="be-block">
+
+            <!-- IMAGE SLIDESHOW -->
+            <div class="be-img-slider">
+                <div class="slides">
+                    <img src="ADD-IMG-4" class="slide active">
+                    <img src="ADD-IMG-5" class="slide">
+                    <img src="ADD-IMG-6" class="slide">
+                </div>
+
+                <button class="slider-btn prev" onclick="moveSlide2(-1)">❮</button>
+                <button class="slider-btn next" onclick="moveSlide2(1)">❯</button>
+            </div>
+
+            <!-- TEXT -->
+            <div class="be-text">
+                <div class="be-number">2</div>
+                <h2>Ocean Viewpoints</h2>
+                <p>
+                    Discover hidden viewpoints overlooking lagoons, coral shelves, and dramatic reef edges —
+                    quiet places perfect for sunrise walks or peaceful reflection.
+                </p>
+            </div>
+
+        </div>
+    </section>
+
+</main>
+
+<script src="js/beach-sliders.js"></script>
+
+</body>
+</html>

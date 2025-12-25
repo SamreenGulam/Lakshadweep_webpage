@@ -1,20 +1,46 @@
 /* ================= HERO SECTION ================= */
 .hero {
   height: 100vh;
-  background-image: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   display: flex;
   align-items: center;
   padding-left: 80px;
+  overflow: hidden;
 }
+/* Container holding all videos */
+.hero-videos {
+  position: absolute;
+  inset: 0;
+}
+.hero-videos video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;                 /* hidden by default */
+  transition: opacity 1.5s ease-in-out;
+}
+/* These classes will be controlled by JS */
+.hero-videos video.active {
+  opacity: 1;
+}
+
+/* first video visible initially */
+.hero-video.v1 {
+  opacity: 1;
+}
+
 
 .hero-content {
   position: relative;
-  text-align: left;
+  z-index: 10;
   color: white;
-  z-index: 2;
+  text-align: left;
+  padding-left: 50px;
+  padding-top: 150px;
 }
 
 .hero-content h1 {
@@ -38,6 +64,25 @@
 .hero-content h1,
 .hero-content p {
   text-shadow: 0 3px 8px rgba(0, 0, 0, 0.35);
+}
+
+/* Slideshow container */
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  animation: heroSlide 18s infinite ease-in-out;
+  z-index: -1;
+}
+
+/* TEXT STAYS ABOVE */
+.hero-content {
+  position: relative;
+  z-index: 2;
 }
 
 /* Import Playfair Display */
@@ -148,8 +193,13 @@
   font-weight: 800;
   color: rgb(9, 129, 228);
   line-height: 1;
-  padding-left: 20px;
 }
+.nav-logo {
+    height: 70px;          /* adjust size as needed */
+    width: auto;
+    object-fit: contain;
+}
+
 
 .brandsubhead {
   font-size: 8.4px;
@@ -157,7 +207,6 @@
   color: #483535;
   margin-top: 2px;
   letter-spacing: 0.3px;
-  padding-left: 20px;
 }
 
 .nav-link {
@@ -194,6 +243,27 @@
   font-size: 32px;
   font-weight: 700;
 }
+/* Navbar Plan Your Trip Button (hidden by default) */
+.nav-trip-btn {
+    display: none;
+    padding: 8px 20px;
+    border-radius: 25px;
+    background: linear-gradient(45deg, #1da1f2, #007bff);
+    color: white;
+    border: none;
+    font-weight: 600;
+    cursor: pointer;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    text-decoration: none !important;
+}
+
+/* When button becomes active on scroll */
+.nav-trip-btn.show {
+    display: inline-block;
+    opacity: 1;
+    transform: translateY(0);
+}
+
 
 /* Navbar for mobile  */
 /* =============================
@@ -1410,36 +1480,47 @@
 .map-thumb-all {
   --thumb-url: url("../utilities/maps/map.jpg");
 }
+
 .map-thumb-agatti {
   --thumb-url: url("../utilities/maps/agattiMap.jpg");
 }
+
 .map-thumb-bangaram {
   --thumb-url: url("../utilities/maps/bangarammap.png");
 }
+
 .map-thumb-minicoy {
   --thumb-url: url("../utilities/maps/minicoymap.png");
 }
+
 .map-thumb-kavaratti {
   --thumb-url: url("../utilities/maps/kavarattimap.png");
 }
+
 .map-thumb-kalpeni {
   --thumb-url: url("../utilities/maps/kalpeniMap.jpg");
 }
+
 .map-thumb-amini {
   --thumb-url: url("../utilities/maps/aminimap.png");
 }
+
 .map-thumb-kadmat {
   --thumb-url: url("../utilities/maps/kadmatMap.jpg");
 }
+
 .map-thumb-kiltan {
   --thumb-url: url("../utilities/maps/kiltanMap.png");
 }
+
 .map-thumb-bitra {
   --thumb-url: url("../utilities/maps/bitraMap.png");
 }
+
 .map-thumb-andrott {
   --thumb-url: url("../utilities/maps/androttMap.png");
 }
+
 .map-thumb-chetlat {
   --thumb-url: url("../utilities/maps/chetlatMap.png");
 }
@@ -1510,7 +1591,7 @@
   max-width: 420px;
   font-size: 15px;
   line-height: 1.8;
-  color: rgba(255,255,255,0.85);
+  color: rgba(255, 255, 255, 0.85);
 }
 
 /* SLIDER */
@@ -1523,7 +1604,8 @@
   display: flex;
   gap: 24px;
   transform: translateX(0);
-  transition: transform 0.8s cubic-bezier(.22,.61,.36,1);
+  transition: transform 0.8s cubic-bezier(.20,.59,.34,1);
+  /* transition: transform 0.35s ease-out; */
 }
 
 /* CARDS */
@@ -1538,7 +1620,7 @@
   padding: 20px;
   font-family: "Playfair Display", serif;
   font-size: 20px;
-  box-shadow: 0 25px 60px rgba(0,0,0,0.45);
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.45);
   flex-shrink: 0;
 }
 
@@ -1546,20 +1628,39 @@
   opacity: 0.9;
 }
 
+.exp-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  /* makes full card clickable */
+}
+
+.exp-link:visited,
+.exp-link:hover,
+.exp-link:focus,
+.exp-link:active {
+  text-decoration: none;
+  color: inherit;
+}
+
 /* CARD IMAGES */
 .exp-card-scuba {
   background-image: url("../utilities/pictures/scoobaDiving.jpg");
 }
 
-.exp-card-surf {
+.exp-card-culture {
   background-image: url("../utilities/pictures/culture.jpg");
 }
 
-.exp-card-kayak {
+.exp-card-lagoon {
   background-image: url("../utilities/pictures/lagoonCruises.jpg");
 }
 
-.exp-card-lagoon {
+.exp-card-adventure {
+  background-image: url("../utilities/pictures/adventureActivities.jpg");
+}
+
+.exp-card-beach {
   background-image: url("../utilities/pictures/locals.jpg");
 }
 
@@ -1574,7 +1675,7 @@
   width: 44px;
   height: 44px;
   border-radius: 50%;
-  border: 1px solid rgba(255,255,255,0.5);
+  border: 1px solid rgba(255, 255, 255, 0.5);
   background: transparent;
   color: white;
   font-size: 22px;
@@ -1587,16 +1688,54 @@
   color: #000;
 }
 
-/* RESPONSIVE */
-@media (max-width: 900px) {
-  .exp-wrapper {
-    grid-template-columns: 1fr;
-  }
-  .lxw-exp-cinematic {
-    height: auto;
-  }
+/* /* ENTRY PERMIT – EDITORIAL STYLE / */
+.permit-editorial {
+  padding: 120px 20px;
+  background: #ffffff;
 }
 
+.permit-editorial-inner {
+  max-width: 760px;
+  /* controls text width */
+  margin: 0 auto;
+  text-align: center;
+
+  opacity: 1 !important;
+  transform: none !important;
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+/* visible on scroll */
+.permit-editorial.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.permit-editorial h2 {
+  font-family: "Playfair Display", serif;
+  font-size: 44px;
+  font-weight: 700;
+  margin-bottom: 28px;
+  color: #0b1e2d;
+}
+
+.permit-editorial p {
+  font-size: 18px;
+  line-height: 1.9;
+  color: #3b4a56;
+  margin-bottom: 22px;
+}
+
+.permit-editorial-link {
+  font-size: 16px;
+  font-weight: 600;
+  color: #0b7285;
+  text-decoration: none;
+}
+
+.permit-editorial-link:hover {
+  text-decoration: underline;
+}
 
 /* ===========================================
    MOBILE & TABLET SLIDER FIX  (FINAL WORKING)
@@ -1700,6 +1839,17 @@
   }
 }
 
+/* exp mobile view */
+@media (max-width: 900px) {
+  .exp-wrapper {
+    grid-template-columns: 1fr;
+  }
+
+  .lxw-exp-cinematic {
+    height: auto;
+  }
+}
+
 /* map mobile view */
 @media (max-width: 992px) {
   .map-wrap {
@@ -1729,55 +1879,8 @@
     min-height: 320px;
   }
 }
-/* /* ENTRY PERMIT – EDITORIAL STYLE / */
-.permit-editorial {
-  padding: 120px 20px;
-  background: #ffffff;
-}
 
-.permit-editorial-inner {
-  max-width: 760px;            /* controls text width */
-  margin: 0 auto;
-  text-align: center;
-
-  opacity: 1 !important;
-  transform: none !important;
-  transition: opacity 0.8s ease, transform 0.8s ease;
-}
-
-/* visible on scroll */
-.permit-editorial.is-visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.permit-editorial h2 {
-  font-family: "Playfair Display", serif;
-  font-size: 44px;
-  font-weight: 700;
-  margin-bottom: 28px;
-  color: #0b1e2d;
-}
-
-.permit-editorial p {
-  font-size: 18px;
-  line-height: 1.9;
-  color: #3b4a56;
-  margin-bottom: 22px;
-}
-
-.permit-editorial-link {
-  font-size: 16px;
-  font-weight: 600;
-  color: #0b7285;
-  text-decoration: none;
-}
-
-.permit-editorial-link:hover {
-  text-decoration: underline;
-}
-
-/* Responsive */
+/* permit mobile view */
 @media (max-width: 768px) {
   .permit-editorial {
     padding: 80px 20px;
@@ -1790,4 +1893,65 @@
   .permit-editorial p {
     font-size: 16px;
   }
+}
+
+/* =============================== */
+/* SCROLL ANIMATION BASE */
+/* =============================== */
+.scroll-animate {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.9s ease, transform 0.9s ease;
+}
+
+.scroll-animate.animate {
+  opacity: 0;
+  transform: translateY(40px);
+}
+
+.scroll-animate.show {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.9s ease, transform 0.9s ease;
+}
+
+.lxw-exp-cinematic {
+  overflow: clip;
+  /* modern + safe */
+}
+
+/* Slide from left */
+.scroll-left {
+  transform: translateX(-60px);
+}
+
+.scroll-left.show {
+  transform: translateX(0);
+}
+
+/* Slide from right */
+.scroll-right {
+  transform: translateX(60px);
+}
+
+.scroll-right.show {
+  transform: translateX(0);
+}
+
+/* =============================== */
+/* ISLANDS SCROLL ANIMATION */
+/* =============================== */
+
+.scroll-animate {
+  opacity: 0;
+  transform: translateY(40px) scale(0.97);
+  transition:
+    opacity 0.7s ease,
+    transform 0.7s ease;
+}
+
+/* becomes visible */
+.scroll-animate.show {
+  opacity: 1;
+  transform: translateY(0) scale(1);
 }

@@ -3,31 +3,78 @@
 
 <head>
     <meta charset="UTF-8" />
-    <title>Entry Permit | Lakshadweep</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Entry Permit | Lakshadweep</title>
 
-    <!-- Fonts -->
-    <link
-        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@400;500;600&display=swap"
+    <!-- GOOGLE FONTS -->
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&display=swap"
         rel="stylesheet">
 
-    <!-- CSS -->
-    <link rel="stylesheet" href="css/entry-permit.css" />
-    <head>
-  <meta charset="UTF-8" />
-  <title>Entry Permit | Lakshadweep</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- BOOTSTRAP ICONS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
 
-  <!-- Cormorant Garamond -->
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- BOOTSTRAP CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 
-  <link rel="stylesheet" href="./styles/entry-permit.css" />
+    <!-- GLOBAL SITE STYLES (THIS WAS MISSING) -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- ENTRY PERMIT PAGE STYLES -->
+    <link rel="stylesheet" href="css/entry-permit.css">
 </head>
 
 <body>
 
-    <!-- PAGE HEADER -->
-    <header class="permit-hero">
+    <!-- ================= NAVBAR (unchanged) ================= -->
+    <nav class="navbar navbar-expand-lg fixed-top main-navbar">
+
+        <a class="navbar-brand fw-semibold d-flex flex-column" href="index.html">
+            <span class="brand-title">Lakshadweep</span>
+            <span class="brandsubhead">Official‑style travel inspiration</span>
+        </a>
+
+        <button class="navbar-toggler" type="button" id="mobileMenuToggle">
+            <i class="bi bi-list" style="font-size:32px;color:white;"></i>
+        </button>
+
+        <div class="collapse navbar-collapse" id="mainNav">
+            <ul class="navbar-nav ms-auto">
+
+                <li class="nav-item dropdown-mega">
+                    <a class="nav-link" href="index.html#islands">Islands</a>
+                </li>
+
+                <li class="nav-item dropdown-mega">
+                    <a class="nav-link" href="index.html#travel-info">Travel Info</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html#toDo">Experiences</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link active" href="entry-permit.html">Entry Permit</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#">News</a>
+                </li>
+
+                <li class="nav-item">
+                    <a href="#" class="nav-link explore-trigger">Explore</a>
+                </li>
+
+            </ul>
+        </div>
+
+        <div id="navbarSearch" class="navbar-search">
+            <input type="text" placeholder="SEARCH" class="search-field" />
+            <button class="search-icon"><i class="bi bi-search"></i></button>
+        </div>
+    </nav>
+
+    <!-- ================= PAGE HEADER ================= -->
+    <header class="permit-hero animate-fade-up">
         <div class="permit-hero-content">
             <h1>Entry Permit</h1>
             <p>
@@ -37,62 +84,49 @@
         </div>
     </header>
 
-    <!-- MAIN CONTENT -->
+    <!-- ================= MAIN CONTENT ================= -->
     <main class="permit-container">
 
-        <!-- OVERVIEW -->
         <section class="permit-section">
             <h2>Permit Process – Overview</h2>
 
             <div class="permit-steps">
 
-                <div class="permit-step">
+                <div class="permit-step scroll-animate">
                     <span class="step-no">1</span>
                     <div>
                         <h3>Confirm your category</h3>
-                        <p>
-                            Entry rules may differ for residents, Indian tourists, officials and other categories.
-                            Begin by identifying which category applies to you.
-                        </p>
+                        <p>Entry rules may differ for residents, Indian tourists, officials and other categories.</p>
                     </div>
                 </div>
 
-                <div class="permit-step">
+                <div class="permit-step scroll-animate">
                     <span class="step-no">2</span>
                     <div>
                         <h3>Choose islands & dates</h3>
-                        <p>
-                            Prepare a tentative travel plan. Permits are usually island‑specific and date‑specific.
-                        </p>
+                        <p>Prepare a tentative travel plan. Permits are usually island‑specific and date‑specific.</p>
                     </div>
                 </div>
 
-                <div class="permit-step">
+                <div class="permit-step scroll-animate">
                     <span class="step-no">3</span>
                     <div>
                         <h3>Apply through authorised channel</h3>
-                        <p>
-                            Applications must be submitted through the designated tourism office or
-                            official portal as notified by the Administration of the Union Territory of Lakshadweep.
-                        </p>
+                        <p>Applications must be submitted through the designated tourism office or official portal.</p>
                     </div>
                 </div>
 
-                <div class="permit-step">
+                <div class="permit-step scroll-animate">
                     <span class="step-no">4</span>
                     <div>
                         <h3>Carry permit & ID</h3>
-                        <p>
-                            Keep both digital and printed copies of your approved permit
-                            and a government‑issued photo ID throughout your journey.
-                        </p>
+                        <p>Keep digital and printed copies of your approved permit and a government‑issued ID.</p>
                     </div>
                 </div>
 
             </div>
         </section>
 
-        <!-- OFFICIAL LINK -->
         <section class="permit-section permit-cta">
             <h2>Official Permit Portal</h2>
             <p>
@@ -100,27 +134,18 @@
                 Always verify details through authorised sources before applying.
             </p>
 
-            <a href="https://lakshadweep.gov.in/tourism/entry-permit/" target="_blank" rel="noopener noreferrer" class="permit-btn">
+            <a href="https://lakshadweep.gov.in/tourism/entry-permit/" target="_blank" class="permit-btn">
                 Visit Official Permit Portal
             </a>
         </section>
 
-
-
     </main>
-<script>
-document.addEventListener("DOMContentLoaded", function () {
-  const steps = document.querySelectorAll(".permit-step");
-  const baseDelay = 200;   // first card delay (ms)
-  const gap = 180;         // interval between cards
 
-  steps.forEach((step, index) => {
-    setTimeout(() => {
-      step.classList.add("visible");
-    }, baseDelay + index * gap);
-  });
-});
-</script>
+    <!-- =============== SCRIPTS =============== -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="JS/ux4g.bundle.min.js"></script>
+    <script src="JS/script.js"></script>
+    <script src="js/scrollAnimation.js"></script>
 
 </body>
 

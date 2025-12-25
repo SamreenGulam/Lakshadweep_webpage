@@ -282,6 +282,10 @@ document.addEventListener('DOMContentLoaded', function () {
     const cardWidth = cards[0].offsetWidth + 24;
     track.style.transform = `translateX(-${index * cardWidth}px)`;
   }
+  function updateSlider() {
+    const cardWidth = cards[0].offsetWidth + 24; // 24 = gap
+    track.style.transform = `translateX(${-index * cardWidth}px)`;
+  }
 
   next.addEventListener("click", () => {
     if (index < cards.length - 1) {
@@ -296,6 +300,7 @@ document.addEventListener('DOMContentLoaded', function () {
       update();
     }
   });
+  update();
 })();
 // Scroll reveal for editorial sections
 document.addEventListener("DOMContentLoaded", () => {
@@ -312,4 +317,20 @@ document.addEventListener("DOMContentLoaded", () => {
   );
 
   observer.observe(editorialSection);
+});
+// Video background for home page
+document.addEventListener("DOMContentLoaded", () => {
+  const videos = document.querySelectorAll(".hero-videos video");
+  let index = 0;
+
+  // Show first video instantly (no flash)
+  videos[index].classList.add("active");
+
+  setInterval(() => {
+    videos[index].classList.remove("active");
+
+    index = (index + 1) % videos.length;
+
+    videos[index].classList.add("active");
+  }, 5000); // change every 5 seconds
 });

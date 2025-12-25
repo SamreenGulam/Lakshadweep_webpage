@@ -26,10 +26,21 @@
   <nav class="navbar navbar-expand-lg fixed-top main-navbar">
 
     <!-- Brand -->
-    <a class="navbar-brand fw-semibold d-flex flex-column" href="#">
-      <span class="brand-title">Lakshadweep</span>
-      <span class="brandsubhead">Official‑style travel inspiration</span>
+    <a class="navbar-brand fw-semibold d-flex align-items-center gap-2" href="index.html">
+
+      <!-- LOGO IMAGE -->
+      <img src="utilities/pictures/logo-removebg-preview.png" alt="Lakshadweep Logo" class="nav-logo">
+
+      <!-- TEXT PART -->
+      <div class="d-flex flex-column">
+        <span class="brand-title">Lakshadweep</span>
+        <span class="brandsubhead">Official‑style travel inspiration</span>
+      </div>
+
     </a>
+
+    <a href="plan-your-trip.html" class="nav-trip-btn">Plan Your Trip</a>
+
 
     <!-- Mobile Hamburger -->
     <button class="navbar-toggler" type="button" id="mobileMenuToggle">
@@ -108,7 +119,7 @@
         </li>
 
         <li class="nav-item">
-          <a class="nav-link" href="#">Experiences</a>
+          <a class="nav-link" href="#toDo">Experiences</a>
         </li>
 
         <li class="nav-item">
@@ -132,6 +143,7 @@
       <input type="text" placeholder="SEARCH" class="search-field" />
       <button class="search-icon"><i class="bi bi-search"></i></button>
     </div>
+
 
   </nav>
 
@@ -175,10 +187,18 @@
   </div>
   <!-- HERO SECTION -->
   <header class="hero">
+    <div class="hero-videos">
+      <video src="utilities/heroPage/h1.mp4" autoplay muted loop playsinline></video>
+      <video src="utilities/heroPage/h2.mp4" autoplay muted loop playsinline></video>
+      <video src="utilities/heroPage/h3.mp4" autoplay muted loop playsinline></video>
+      <video src="utilities/heroPage/h4.mp4" autoplay muted loop playsinline></video>
+    </div>
+
     <div class="hero-content">
       <h1>Discover<br>Lakshadweep</h1>
       <p>Experience the beauty of India's tropical paradise</p>
-      <button class="trip-btn primary-trip-btn">Plan Your Trip</button>
+      <button class="trip-btn primary-trip-btn" onclick="window.location.href='plan-your-trip.html'">Plan Your
+        Trip</button>
     </div>
   </header>
   <!-- =============================== -->
@@ -209,7 +229,7 @@
 
     <div class="island-cards">
 
-      <div class="island-card agatti">
+      <div class="island-card agatti scroll-animate">
         <div class="island-overlay">
           <h3>Agatti</h3>
           <p>Agatti Island with airstrip and a stunning lagoon, gateway to Bangaram.</p>
@@ -217,7 +237,7 @@
         </div>
       </div>
 
-      <div class="island-card minicoy">
+      <div class="island-card minicoy scroll-animate">
         <div class="island-overlay">
           <h3>Minicoy</h3>
           <p>Southernmost island with lighthouse views and unique cultural flavour.</p>
@@ -225,7 +245,7 @@
         </div>
       </div>
 
-      <div class="island-card bangaram">
+      <div class="island-card bangaram scroll-animate">
         <div class="island-overlay">
           <h3>Bangaram</h3>
           <p>Tourism atoll with turquoise lagoon, resort stays and night skies.</p>
@@ -233,56 +253,56 @@
         </div>
       </div>
 
-      <div class="island-card kavaratti">
+      <div class="island-card kavaratti scroll-animate">
         <div class="island-overlay">
           <h3>Kavaratti</h3>
           <p>Capital island with mosques, waterfront promenades and calm lagoons.</p>
           <span class="island-tags">Promenade · Mosques · Calm lagoon</span>
         </div>
       </div>
-      <div class="island-card amini">
+      <div class="island-card amini scroll-animate">
         <div class="island-overlay">
           <h3>Amini</h3>
           <p>Historic atoll known for coir products, handicrafts and quiet lanes.</p>
           <span class="island-tags">Culture · Crafts · Heritage</span>
         </div>
       </div>
-      <div class="island-card kadmat">
+      <div class="island-card kadmat scroll-animate">
         <div class="island-overlay">
           <h3>Kadmat</h3>
           <p>Long beaches with shallow waters on one side and deep sea on the other.</p>
           <span class="island-tags">Snorkelling · Long walks · Resorts</span>
         </div>
       </div>
-      <div class="island-card kalpeni">
+      <div class="island-card kalpeni scroll-animate">
         <div class="island-overlay">
           <h3>Kalpeni</h3>
           <p>Shallow lagoon and islets ideal for lagoon sports and reef walks.</p>
           <span class="island-tags">Kayaking · Shallow reefs</span>
         </div>
       </div>
-      <div class="island-card chetlat">
+      <div class="island-card chetlat scroll-animate">
         <div class="island-overlay">
           <h3>Chetlat</h3>
           <p>Small island with coconut groves and a close-knit community.</p>
           <span class="island-tags">Quiet · Coconut landscape</span>
         </div>
       </div>
-      <div class="island-card andrott">
+      <div class="island-card andrott scroll-animate">
         <div class="island-overlay">
           <h3>Andrott</h3>
           <p>One of the largest islands with mosques, greenery and village life.</p>
           <span class="island-tags">Local life · Mosques</span>
         </div>
       </div>
-      <div class="island-card kiltan">
+      <div class="island-card kiltan scroll-animate">
         <div class="island-overlay">
           <h3>Kiltan</h3>
           <p>Island with seafaring history on ancient trade routes.</p>
           <span class="island-tags">Heritage · Calm ambience</span>
         </div>
       </div>
-      <div class="island-card bitra">
+      <div class="island-card bitra scroll-animate">
         <div class="island-overlay">
           <h3>Bitra</h3>
           <p>Tiny inhabited island offering wide ocean horizons and solitude.</p>
@@ -414,172 +434,119 @@
       </div>
 
     </div>
-   <!-- MAP SECTION -->
-<section id="map-section" class="map-section">
-  <div class="container">
-    <h2 class="section-title">Map & Islands</h2>
-    <p class="section-subtitle">Select an island to view its map</p>
+    <!-- MAP SECTION -->
+    <section id="map-section" class="map-section">
+      <div class="container">
+        <h2 class="section-title">Map & Islands</h2>
+        <p class="section-subtitle">Select an island to view its map</p>
 
-    <div class="map-wrap">
-      <!-- MAIN MAP VISUAL -->
-      <div class="map-visual">
-        <img
-          id="mainMap"
-          src="utilities/maps/map.jpg"
-          alt="Map of Lakshadweep islands (overview)"
-        />
-        <div class="map-caption" id="mapCaption">Lakshadweep (overview)</div>
-      </div>
+        <div class="map-wrap">
+          <!-- MAIN MAP VISUAL -->
+          <div class="map-visual">
+            <img id="mainMap" src="utilities/maps/map.jpg" alt="Map of Lakshadweep islands (overview)" />
+            <div class="map-caption" id="mapCaption">Lakshadweep (overview)</div>
+          </div>
 
-      <!-- CONTROLS -->
-      <div class="map-controls scroll-animate">
-        <div class="island-list" role="list" aria-label="Select island">
-          <!-- All islands -->
-          <button
-            class="island-item active map-thumb-all"
-            data-image="../utilities/maps/map.jpg"
-            data-name="Lakshadweep"
-            aria-pressed="true"
-            role="listitem"
-          >
-            <div class="map-thumb"></div>
-            <span>All islands</span>
-          </button>
+          <!-- CONTROLS -->
+          <div class="map-controls scroll-animate">
+            <div class="island-list" role="list" aria-label="Select island">
+              <!-- All islands -->
+              <button class="island-item active map-thumb-all" data-image="../utilities/maps/map.jpg"
+                data-name="Lakshadweep" aria-pressed="true" role="listitem">
+                <div class="map-thumb"></div>
+                <span>All islands</span>
+              </button>
 
-          <!-- Agatti -->
-          <button
-            class="island-item map-thumb-agatti"
-            data-image="../utilities/maps/agattiMap.jpg"
-            data-name="Agatti"
-            aria-pressed="false"
-          >
-            <div class="map-thumb"></div>
-            <span>Agatti</span>
-          </button>
+              <!-- Agatti -->
+              <button class="island-item map-thumb-agatti" data-image="../utilities/maps/agattiMap.jpg"
+                data-name="Agatti" aria-pressed="false">
+                <div class="map-thumb"></div>
+                <span>Agatti</span>
+              </button>
 
-          <!-- Bangaram -->
-          <button
-            class="island-item map-thumb-bangaram"
-            data-image="../utilities/maps/bangarammap.png"
-            data-name="Bangaram"
-            aria-pressed="false"
-          >
-            <div class="map-thumb"></div>
-            <span>Bangaram</span>
-          </button>
+              <!-- Bangaram -->
+              <button class="island-item map-thumb-bangaram" data-image="../utilities/maps/bangarammap.png"
+                data-name="Bangaram" aria-pressed="false">
+                <div class="map-thumb"></div>
+                <span>Bangaram</span>
+              </button>
 
-          <!-- Minicoy -->
-          <button
-            class="island-item map-thumb-minicoy"
-            data-image="../utilities/maps/minicoymap.png"
-            data-name="Minicoy"
-            aria-pressed="false"
-          >
-            <div class="map-thumb"></div>
-            <span>Minicoy</span>
-          </button>
+              <!-- Minicoy -->
+              <button class="island-item map-thumb-minicoy" data-image="../utilities/maps/minicoymap.png"
+                data-name="Minicoy" aria-pressed="false">
+                <div class="map-thumb"></div>
+                <span>Minicoy</span>
+              </button>
 
-          <!-- Kavaratti -->
-          <button
-            class="island-item map-thumb-kavaratti"
-            data-image="../utilities/maps/kavarattimap.png"
-            data-name="Kavaratti"
-            aria-pressed="false"
-          >
-            <div class="map-thumb"></div>
-            <span>Kavaratti</span>
-          </button>
+              <!-- Kavaratti -->
+              <button class="island-item map-thumb-kavaratti" data-image="../utilities/maps/kavarattimap.png"
+                data-name="Kavaratti" aria-pressed="false">
+                <div class="map-thumb"></div>
+                <span>Kavaratti</span>
+              </button>
 
-          <!-- Kalpeni -->
-          <button
-            class="island-item map-thumb-kalpeni"
-            data-image="../utilities/maps/kalpeniMap.jpg"
-            data-name="Kalpeni"
-            aria-pressed="false"
-          >
-            <div class="map-thumb"></div>
-            <span>Kalpeni</span>
-          </button>
+              <!-- Kalpeni -->
+              <button class="island-item map-thumb-kalpeni" data-image="../utilities/maps/kalpeniMap.jpg"
+                data-name="Kalpeni" aria-pressed="false">
+                <div class="map-thumb"></div>
+                <span>Kalpeni</span>
+              </button>
 
-          <!-- Amini -->
-          <button
-            class="island-item map-thumb-amini"
-            data-image="../utilities/maps/aminimap.png"
-            data-name="Amini"
-            aria-pressed="false"
-          >
-            <div class="map-thumb"></div>
-            <span>Amini</span>
-          </button>
+              <!-- Amini -->
+              <button class="island-item map-thumb-amini" data-image="../utilities/maps/aminimap.png" data-name="Amini"
+                aria-pressed="false">
+                <div class="map-thumb"></div>
+                <span>Amini</span>
+              </button>
 
-          <!-- Kadmat -->
-          <button
-            class="island-item map-thumb-kadmat"
-            data-image="../utilities/maps/kadmatMap.jpg"
-            data-name="Kadmat"
-            aria-pressed="false"
-          >
-            <div class="map-thumb"></div>
-            <span>Kadmat</span>
-          </button>
+              <!-- Kadmat -->
+              <button class="island-item map-thumb-kadmat" data-image="../utilities/maps/kadmatMap.jpg"
+                data-name="Kadmat" aria-pressed="false">
+                <div class="map-thumb"></div>
+                <span>Kadmat</span>
+              </button>
 
-          <!-- Kiltan -->
-          <button
-            class="island-item map-thumb-kiltan"
-            data-image="../utilities/maps/kiltanMap.png"
-            data-name="Kiltan"
-            aria-pressed="false"
-          >
-            <div class="map-thumb"></div>
-            <span>Kiltan</span>
-          </button>
+              <!-- Kiltan -->
+              <button class="island-item map-thumb-kiltan" data-image="../utilities/maps/kiltanMap.png"
+                data-name="Kiltan" aria-pressed="false">
+                <div class="map-thumb"></div>
+                <span>Kiltan</span>
+              </button>
 
-          <!-- Bitra -->
-          <button
-            class="island-item map-thumb-bitra"
-            data-image="../utilities/maps/bitraMap.png"
-            data-name="Bitra"
-            aria-pressed="false"
-          >
-            <div class="map-thumb"></div>
-            <span>Bitra</span>
-          </button>
+              <!-- Bitra -->
+              <button class="island-item map-thumb-bitra" data-image="../utilities/maps/bitraMap.png" data-name="Bitra"
+                aria-pressed="false">
+                <div class="map-thumb"></div>
+                <span>Bitra</span>
+              </button>
 
-          <!-- Andrott -->
-          <button
-            class="island-item map-thumb-andrott"
-            data-image="../utilities/maps/androttMap.png"
-            data-name="Andrott"
-            aria-pressed="false"
-          >
-            <div class="map-thumb"></div>
-            <span>Andrott</span>
-          </button>
+              <!-- Andrott -->
+              <button class="island-item map-thumb-andrott" data-image="../utilities/maps/androttMap.png"
+                data-name="Andrott" aria-pressed="false">
+                <div class="map-thumb"></div>
+                <span>Andrott</span>
+              </button>
 
-          <!-- Chetlat -->
-          <button
-            class="island-item map-thumb-chetlat"
-            data-image="../utilities/maps/chetlatMap.png"
-            data-name="Chetlat"
-            aria-pressed="false"
-          >
-            <div class="map-thumb"></div>
-            <span>Chetlat</span>
-          </button>
-        </div>
+              <!-- Chetlat -->
+              <button class="island-item map-thumb-chetlat" data-image="../utilities/maps/chetlatMap.png"
+                data-name="Chetlat" aria-pressed="false">
+                <div class="map-thumb"></div>
+                <span>Chetlat</span>
+              </button>
+            </div>
 
-        <div class="map-actions">
-          <button id="resetMap" class="btn-ghost">Show Lakshadweep</button>
+            <div class="map-actions">
+              <button id="resetMap" class="btn-ghost">Show Lakshadweep</button>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-  </div>
-</section>
+    </section>
 
     <!-- =============================== -->
     <!--  EXPERIENCES – CINEMATIC STYLE -->
     <!-- =============================== -->
-    <section class="lxw-exp-cinematic">
+    <section id="toDo" class="lxw-exp-cinematic scroll-animate">
 
       <!-- BACKGROUND VIDEO -->
       <video class="exp-bg-video" autoplay muted loop playsinline>
@@ -593,7 +560,7 @@
       <div class="exp-wrapper">
 
         <!-- LEFT TEXT -->
-        <div class="exp-text">
+        <div class="exp-text scroll-animate scroll-left">
           <h2>Memories<br>for a Lifetime</h2>
           <p>
             In Lakshadweep, life unfolds gently — beneath turquoise waters,
@@ -603,27 +570,32 @@
         </div>
 
         <!-- RIGHT CARD SLIDER -->
-        <div class="exp-slider">
+        <div class="exp-slider scroll-animate scroll-right">
 
           <div class="exp-track">
             <a href="water-activities.html" class="exp-link">
-              <div class="exp-card exp-card-scuba">
+              <div class="exp-card exp-card-scuba scroll-animate">
                 <span>Water Activities</span>
               </div>
             </a>
             <a href="culture-heritage.html" class="exp-link">
-              <div class="exp-card exp-card-surf">
+              <div class="exp-card exp-card-culture scroll-animate">
                 <span>Culture, Arts and Mosques</span>
               </div>
             </a>
             <a href="lagoon-cruises.html" class="exp-link">
-              <div class="exp-card exp-card-kayak">
+              <div class="exp-card exp-card-lagoon scroll-animate">
                 <span>Lagoon Cruises</span>
               </div>
             </a>
-            <a href="shopping-local.html" class="exp-link">
-              <div class="exp-card exp-card-lagoon">
-                <span>Shopping and Local Experiences</span>
+            <a href="adventure-activities.html" class="exp-link">
+              <div class="exp-card exp-card-adventure scroll-animate">
+                <span>Adventure Activities</span>
+              </div>
+            </a>
+            <a href="beach-exploring.html" class="exp-link">
+              <div class="exp-card exp-card-beach scroll-animate">
+                <span>Beach Exploring</span>
               </div>
             </a>
 
@@ -668,6 +640,18 @@
     <script src="JS/ux4g.bundle.min.js"></script>
     <script src="JS/script.js"></script>
     <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="js/scrollAnimation.js"></script>
+    <script>
+      window.addEventListener("scroll", () => {
+        const btn = document.querySelector(".nav-trip-btn");
+        if (window.scrollY > 200) {
+          btn.classList.add("show");
+        } else {
+          btn.classList.remove("show");
+        }
+      });
+    </script>
+
 </body>
 
 </html>
