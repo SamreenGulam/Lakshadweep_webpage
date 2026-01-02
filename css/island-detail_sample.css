@@ -1,0 +1,162 @@
+/* ================= ISLAND DETAIL PAGE ================= */
+
+body {
+  font-family: "Inter", sans-serif;
+  background: #f7f9fb;
+  color: #10212b;
+}
+
+/* ---------- HERO ---------- */
+.island-hero {
+  position: relative;
+  height: 100vh;
+  background: url("../utilities/pictures/islands/agatti-hero.jpg") center/cover no-repeat;
+  display: flex;
+  align-items: flex-end;
+  padding: 0 20px 90px;
+}
+
+.island-hero-video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -2;
+}
+
+.island-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.6), rgba(0,0,0,0.2));
+}
+
+.island-hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+  margin: auto;
+  text-align: center;
+}
+
+.island-hero h1 {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 64px;
+  color: #fff;
+}
+
+.island-hero p {
+  color: #eaeaea;
+  font-size: 20px;
+}
+
+/* ---------- FACTS ---------- */
+.island-facts {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 20px;
+  max-width: 1100px;
+  margin: -60px auto 80px;
+  padding: 0 20px;
+}
+
+.fact-card {
+  background: #fff;
+  border-radius: 18px;
+  padding: 22px;
+  text-align: center;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.08);
+}
+
+.fact-card span {
+  font-size: 14px;
+  opacity: 0.7;
+}
+
+.fact-card strong {
+  display: block;
+  font-size: 18px;
+  margin-top: 6px;
+}
+
+/* ---------- MAP + INFO ---------- */
+.island-map-info {
+  max-width: 1100px;
+  margin: auto;
+  padding: 0 20px 80px;
+  display: grid;
+  grid-template-columns: 45% 55%;
+  gap: 40px;
+}
+
+.map-box img {
+  width: 100%;
+  border-radius: 20px;
+}
+
+.info-box h2 {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 36px;
+  margin-bottom: 16px;
+}
+
+.info-box p {
+  font-size: 18px;
+  line-height: 1.7;
+  color: #425563;
+}
+
+/* ---------- GALLERY ---------- */
+.island-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 16px;
+  padding: 0 20px 80px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.island-gallery img {
+  width: 100%;
+  border-radius: 20px;
+  object-fit: cover;
+}
+
+/* ---------- EXPERIENCES ---------- */
+.island-experiences {
+  background: #ffffff;
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.island-experiences h2 {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 42px;
+  margin-bottom: 40px;
+}
+
+.exp-grid {
+  max-width: 900px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.exp-card {
+  background: #eef6fb;
+  padding: 22px;
+  border-radius: 16px;
+  font-weight: 500;
+}
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width: 900px) {
+  .island-map-info {
+    grid-template-columns: 1fr;
+  }
+
+  .island-hero h1 {
+    font-size: 42px;
+  }
+}
